@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="meta-title">Grupo Foresta – Salón de Eventos CDMX</title>
+  <meta name="description" id="meta-description" content="Salón de eventos premium en Ciudad de México">
+  <meta name="keywords" id="meta-keywords" content="salón de eventos CDMX">
+  <meta property="og:title" id="og-title" content="Grupo Foresta">
+  <meta property="og:description" id="og-description" content="Salón de eventos premium en Ciudad de México">
+  <meta property="og:image" id="og-image" content="/images/og-default.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" id="favicon" href="/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    :root {
+      --verde: #1a2e1a;
+      --verde-medio: #2d4a2d;
+      --verde-claro: #3d6b3d;
+      --dorado: #c9a84c;
+      --dorado-claro: #e2c068;
+      --blanco: #ffffff;
+      --crema: #f9f6f0;
+      --gris: #f4f4f4;
+      --texto: #2c2c2c;
+      --sombra: 0 4px 24px rgba(0,0,0,0.10);
+      --sombra-card: 0 2px 16px rgba(26,46,26,0.10);
+      --radio: 12px;
+      --transicion: 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--texto); background: var(--blanco); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-label { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dorado); font-weight: 600; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--verde); line-height: 1.2; margin-bottom: 16px; }
+    .section-title.white { color: var(--blanco); }
+    .section-sub { font-size: 1.05rem; color: #555; line-height: 1.7; max-width: 640px; }
+    .section-sub.white { color: rgba(255,255,255,0.82); }
+    section { padding: 80px 0; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all var(--transicion); border: 2px solid transparent; text-decoration: none; }
+    .btn-primary { background: var(--dorado); color: var(--verde); }
+    .btn-primary:hover { background: var(--dorado-claro); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
+    .btn-outline { background: transparent; color: var(--blanco); border-color: var(--blanco); }
+    .btn-outline:hover { background: var(--blanco); color: var(--verde); }
+    .btn-verde { background: var(--verde); color: var(--blanco); }
+    .btn-verde:hover { background: var(--verde-medio); transform: translateY(-2px); }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .slide-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .slide-left.visible { opacity: 1; transform: none; }
+    .slide-right { opacity: 0; transform: translateX(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .slide-right.visible { opacity: 1; transform: none; }
+
+    /* ── NAV ── */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(26,46,26,0.97); backdrop-filter: blur(8px); transition: box-shadow 0.3s; }
+    #navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .nav-logo img { height: 48px; width: auto; object-fit: contain; }
+    .nav-logo span { font-family: 'Playfair Display', serif; color: var(--blanco); font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.88); font-size: 0.9rem; font-weight: 500; padding: 8px 14px; border-radius: 6px; transition: all 0.25s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--dorado); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: " ▾"; font-size: 0.75rem; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--verde); border-radius: 10px; min-width: 200px; box-shadow: var(--sombra); overflow: hidden; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 12px 20px; color: rgba(255,255,255,0.88); font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
+    .dropdown-menu a:hover { background: var(--verde-medio); color: var(--dorado); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: var(--blanco); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: var(--verde); z-index: 999; overflow-y: auto; padding: 20px 0; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 15px 30px; color: rgba(255,255,255,0.9); font-size: 1.05rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-menu a:hover { color: var(--dorado); background: rgba(255,255,255,0.05); }
+    .mobile-menu .m-sub { padding-left: 48px; font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+
+    /* ── HERO ── */
+    #hero { height: 100vh; min-height: 600px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero-slider { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; background-size: cover; background-position: center; }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,20,10,0.55) 0%, rgba(10,20,10,0.72) 100%); }
+    .hero-content { position: relative; z-index: 2; color: var(--blanco); max-width: 800px; padding: 0 20px; }
+    .hero-label { font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dorado); margin-bottom: 16px; }
+    .hero-title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+    .hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.25rem); color: rgba(255,255,255,0.85); margin-bottom: 36px; font-weight: 300; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-dots { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s; }
+    .hero-dot.active { background: var(--dorado); width: 24px; border-radius: 4px; }
+
+    /* ── VIDEO ── */
+    #video-section { background: var(--crema); text-align: center; }
+    .video-wrapper { position: relative; width: 100%; max-width: 900px; margin: 40px auto 0; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.2); aspect-ratio: 16/9; }
+    .video-wrapper iframe, .video-wrapper video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+    /* ── PROMOCIONES ── */
+    #promociones { background: var(--verde); }
+    .promo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+    .promo-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(201,168,76,0.25); border-radius: var(--radio); overflow: hidden; transition: transform var(--transicion); }
+    .promo-card:hover { transform: translateY(-4px); }
+    .promo-card img { width: 100%; height: 200px; object-fit: cover; }
+    .promo-body { padding: 20px; }
+    .promo-fecha { font-size: 0.78rem; color: var(--dorado); letter-spacing: 0.1em; margin-bottom: 8px; text-transform: uppercase; }
+    .promo-nombre { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--blanco); margin-bottom: 10px; }
+    .promo-desc { font-size: 0.9rem; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── TIPOS DE EVENTO ── */
+    #tipos-evento { background: var(--blanco); }
+    .tipos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; margin-top: 44px; }
+    .tipo-card { background: var(--crema); border-radius: var(--radio); padding: 28px 20px; text-align: center; border: 1px solid rgba(26,46,26,0.08); transition: all var(--transicion); }
+    .tipo-card:hover { background: var(--verde); transform: translateY(-4px); box-shadow: var(--sombra-card); }
+    .tipo-card:hover .tipo-icono { color: var(--dorado); }
+    .tipo-card:hover .tipo-nombre { color: var(--blanco); }
+    .tipo-icono { font-size: 2.2rem; margin-bottom: 12px; }
+    .tipo-nombre { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--verde); font-weight: 600; }
+
+    /* ── VENTAJAS ── */
+    #ventajas { background: var(--crema); }
+    .ventajas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; margin-top: 44px; }
+    .ventaja-card { background: var(--blanco); border-radius: var(--radio); padding: 32px 24px; border-left: 4px solid var(--dorado); box-shadow: var(--sombra-card); transition: transform var(--transicion); }
+    .ventaja-card:hover { transform: translateY(-4px); }
+    .ventaja-icono { font-size: 2rem; margin-bottom: 14px; color: var(--dorado); }
+    .ventaja-titulo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--verde); margin-bottom: 8px; }
+    .ventaja-desc { font-size: 0.9rem; color: #666; line-height: 1.6; }
+
+    /* ── CTA OSCURO ── */
+    .cta-oscuro { background: linear-gradient(135deg, var(--verde) 0%, #0d1a0d 100%); padding: 80px 0; text-align: center; }
+    .cta-oscuro .section-label { color: var(--dorado); }
+    .cta-oscuro h2 { color: var(--blanco); font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 16px; }
+    .cta-oscuro p { color: rgba(255,255,255,0.78); margin-bottom: 36px; font-size: 1.05rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    /* ── NOSOTROS ── */
+    #nosotros .nos-hero { height: 380px; background-size: cover; background-position: center; border-radius: 16px; overflow: hidden; position: relative; margin-bottom: 56px; }
+    #nosotros .nos-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,20,10,0.3), rgba(10,20,10,0.7)); display: flex; align-items: flex-end; padding: 40px; }
+    .nos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    @media(max-width:768px) { .nos-grid { grid-template-columns: 1fr; } }
+    .nos-valores { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .valor-item { background: var(--crema); border-radius: 10px; padding: 20px; border-top: 3px solid var(--dorado); }
+    .valor-titulo { font-family: 'Playfair Display', serif; color: var(--verde); font-size: 1rem; margin-bottom: 6px; }
+    .valor-texto { font-size: 0.88rem; color: #666; line-height: 1.6; }
+
+    /* ── SALONES ── */
+    #salones { background: var(--blanco); }
+    .salones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 44px; }
+    .salon-card { border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra-card); border: 1px solid rgba(0,0,0,0.07); cursor: pointer; transition: all var(--transicion); }
+    .salon-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(26,46,26,0.18); }
+    .salon-img { position: relative; height: 240px; overflow: hidden; }
+    .salon-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .salon-card:hover .salon-img img { transform: scale(1.05); }
+    .salon-tipo-badge { position: absolute; top: 14px; right: 14px; background: var(--dorado); color: var(--verde); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .salon-body { padding: 24px; }
+    .salon-nombre { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--verde); margin-bottom: 8px; }
+    .salon-desc { font-size: 0.9rem; color: #666; line-height: 1.6; margin-bottom: 14px; }
+    .salon-cap { font-size: 0.85rem; color: var(--verde-claro); font-weight: 600; margin-bottom: 16px; }
+    .salon-cap span { background: var(--crema); padding: 4px 12px; border-radius: 20px; margin-right: 6px; }
+    .salon-footer { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ── DETALLE SALON ── */
+    #salon-detalle { display: none; }
+    #salon-detalle.active { display: block; }
+    .det-hero { height: 480px; background-size: cover; background-position: center; position: relative; }
+    .det-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 30%, rgba(10,20,10,0.85)); display: flex; align-items: flex-end; }
+    .det-hero-content { padding: 48px; color: var(--blanco); }
+    .det-hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; }
+    .det-tipo { display: inline-block; background: var(--dorado); color: var(--verde); font-size: 0.8rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; margin-bottom: 16px; }
+    .det-body { padding: 56px 0; }
+    .det-grid { display: grid; grid-template-columns: 1fr 360px; gap: 56px; align-items: start; }
+    @media(max-width:900px) { .det-grid { grid-template-columns: 1fr; } }
+    .det-sidebar { background: var(--crema); border-radius: var(--radio); padding: 32px; border: 1px solid rgba(26,46,26,0.1); }
+    .det-sidebar h3 { font-family: 'Playfair Display', serif; color: var(--verde); margin-bottom: 20px; }
+    .det-cap-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 0.92rem; }
+    .det-cap-label { color: #666; }
+    .det-cap-val { font-weight: 600; color: var(--verde); }
+    .det-caracteristicas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .det-tag { background: var(--blanco); border: 1px solid var(--dorado); color: var(--verde); font-size: 0.78rem; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
+    .det-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; }
+    .det-galeria img { border-radius: 8px; height: 160px; object-fit: cover; width: 100%; cursor: pointer; transition: opacity 0.2s; }
+    .det-galeria img:hover { opacity: 0.85; }
+    .back-btn { display: inline-flex; align-items: center; gap: 8px; color: var(--verde); font-weight: 600; margin-bottom: 28px; cursor: pointer; font-size: 0.95rem; }
+    .back-btn:hover { color: var(--dorado); }
+
+    /* ── EMPRESAS ── */
+    #empresas { background: var(--crema); }
+    .emp-tipos { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 36px; }
+    .emp-tipo { background: var(--blanco); border-radius: var(--radio); padding: 24px 20px; text-align: center; border: 1px solid rgba(26,46,26,0.08); transition: all var(--transicion); }
+    .emp-tipo:hover { background: var(--verde); border-color: var(--verde); }
+    .emp-tipo:hover .emp-tipo-nombre { color: var(--blanco); }
+    .emp-tipo:hover .emp-tipo-icon { color: var(--dorado); }
+    .emp-tipo-icon { font-size: 2rem; color: var(--verde); margin-bottom: 12px; }
+    .emp-tipo-nombre { font-family: 'Playfair Display', serif; color: var(--verde); font-size: 1rem; }
+
+    /* ── SERVICIOS ── */
+    #servicios { background: var(--blanco); }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 44px; }
+    .servicio-card { border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra-card); border: 1px solid rgba(0,0,0,0.06); transition: all var(--transicion); }
+    .servicio-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,46,26,0.15); }
+    .servicio-img { height: 200px; overflow: hidden; }
+    .servicio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .servicio-card:hover .servicio-img img { transform: scale(1.06); }
+    .servicio-body { padding: 22px; }
+    .serv-cat { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado); margin-bottom: 8px; font-weight: 600; }
+    .serv-nombre { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--verde); margin-bottom: 10px; }
+    .serv-desc { font-size: 0.88rem; color: #666; line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── MENÚS ── */
+    #menus { background: var(--crema); }
+    .menus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; margin-top: 44px; }
+    .menu-card { background: var(--blanco); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra-card); transition: all var(--transicion); }
+    .menu-card:hover { transform: translateY(-4px); }
+    .menu-img { height: 200px; overflow: hidden; }
+    .menu-img img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-body { padding: 24px; }
+    .menu-cat-badge { display: inline-block; background: var(--crema); border: 1px solid var(--dorado); color: var(--verde); font-size: 0.72rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; }
+    .menu-nombre { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--verde); margin-bottom: 10px; }
+    .menu-desc { font-size: 0.88rem; color: #666; line-height: 1.6; margin-bottom: 16px; }
+    .menu-tiempos { border-top: 1px solid var(--gris); padding-top: 16px; }
+    .menu-tiempo-item { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.85rem; border-bottom: 1px dashed var(--gris); }
+    .mt-label { color: #888; font-weight: 500; }
+    .mt-platos { color: var(--verde); font-weight: 400; font-size: 0.82rem; }
+    .menu-precio { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dorado); font-weight: 600; margin-top: 14px; }
+
+    /* ── BEBIDAS ── */
+    #bebidas { background: var(--verde); }
+    .bebidas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+    .bebida-categoria { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2); border-radius: var(--radio); padding: 28px; }
+    .bebida-cat-titulo { font-family: 'Playfair Display', serif; color: var(--dorado); font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .bebida-cat-titulo::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.3); }
+    .bebida-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .bebida-item:last-child { border-bottom: none; }
+    .beb-info { flex: 1; }
+    .beb-nombre { color: var(--blanco); font-size: 0.95rem; font-weight: 500; }
+    .beb-nota { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-top: 3px; }
+    .beb-ml { color: var(--dorado); font-size: 0.82rem; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+
+    /* ── RESTAURANTE ── */
+    #restaurante { background: var(--blanco); }
+    .rest-hero { height: 360px; border-radius: 16px; overflow: hidden; position: relative; margin-bottom: 48px; background-size: cover; background-position: center; }
+    .rest-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(10,20,10,0.75)); }
+
+    /* ── EQUIPO ── */
+    #equipo { background: var(--crema); }
+    .equipo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px; margin-top: 44px; }
+    .equipo-card { background: var(--blanco); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra-card); text-align: center; transition: all var(--transicion); }
+    .equipo-card:hover { transform: translateY(-4px); }
+    .eq-foto { height: 260px; overflow: hidden; }
+    .eq-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .equipo-card:hover .eq-foto img { transform: scale(1.05); }
+    .eq-body { padding: 24px 20px; }
+    .eq-nombre { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--verde); margin-bottom: 4px; }
+    .eq-puesto { font-size: 0.8rem; color: var(--dorado); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .eq-desc { font-size: 0.87rem; color: #666; line-height: 1.6; margin-bottom: 14px; }
+    .eq-frase { font-style: italic; font-size: 0.88rem; color: var(--verde-claro); border-left: 3px solid var(--dorado); padding-left: 12px; text-align: left; margin-bottom: 14px; }
+    .eq-redes { display: flex; justify-content: center; gap: 10px; }
+    .eq-red { width: 34px; height: 34px; border-radius: 50%; background: var(--crema); border: 1px solid var(--dorado); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--verde); transition: all 0.2s; }
+    .eq-red:hover { background: var(--verde); color: var(--blanco); }
+
+    /* ── GALERÍA ── */
+    #galeria { background: var(--blanco); }
+    .galeria-filtros { display: flex; gap: 10px; flex-wrap: wrap; margin: 32px 0; }
+    .filtro-btn { padding: 8px 20px; border-radius: 30px; border: 2px solid var(--verde); background: transparent; color: var(--verde); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 0.25s; }
+    .filtro-btn.active, .filtro-btn:hover { background: var(--verde); color: var(--blanco); }
+    .galeria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .gal-item { border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 4/3; background: var(--gris); }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s, opacity 0.3s; }
+    .gal-item:hover img { transform: scale(1.06); }
+    .gal-overlay { position: absolute; inset: 0; background: rgba(10,20,10,0); transition: background 0.3s; display: flex; align-items: flex-end; padding: 16px; }
+    .gal-item:hover .gal-overlay { background: rgba(10,20,10,0.55); }
+    .gal-info { opacity: 0; transform: translateY(10px); transition: all 0.3s; }
+    .gal-item:hover .gal-info { opacity: 1; transform: none; }
+    .gal-titulo { color: var(--blanco); font-family: 'Playfair Display', serif; font-size: 1rem; }
+    .gal-desc { color: rgba(255,255,255,0.8); font-size: 0.8rem; margin-top: 4px; }
+    .gal-video-badge { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.6); color: var(--blanco); font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; }
+
+    /* ── CONTACTO ── */
+    #contacto { background: var(--crema); }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 44px; }
+    @media(max-width:768px) { .contacto-grid { grid-template-columns: 1fr; } }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--verde); margin-bottom: 7px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px; border-radius: 8px; border: 1.5px solid #ddd;
+      font-family: 'Inter', sans-serif; font-size: 0.93rem; transition: border-color 0.25s;
+      background: var(--blanco); color: var(--texto);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--dorado); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+    .contacto-info { display: flex; flex-direction: column; gap: 20px; }
+    .info-item { display: flex; gap: 14px; align-items: flex-start; }
+    .info-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--verde); color: var(--dorado); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .info-texto strong { display: block; color: var(--verde); font-size: 0.9rem; margin-bottom: 3px; }
+    .info-texto span, .info-texto a { color: #666; font-size: 0.9rem; line-height: 1.5; }
+    .mapa-wrapper { border-radius: var(--radio); overflow: hidden; margin-top: 36px; height: 320px; box-shadow: var(--sombra-card); }
+    .mapa-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+    /* ── ENCUESTA ── */
+    #encuesta { background: var(--verde); }
+    .radio-grupo { margin-bottom: 22px; }
+    .radio-grupo label { display: block; color: rgba(255,255,255,0.85); font-size: 0.92rem; margin-bottom: 10px; font-weight: 500; }
+    .radio-opciones { display: flex; gap: 10px; flex-wrap: wrap; }
+    .radio-opciones label { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; padding: 8px 18px; cursor: pointer; transition: all 0.2s; font-size: 0.88rem; color: rgba(255,255,255,0.82); margin-bottom: 0; }
+    .radio-opciones input { display: none; }
+    .radio-opciones input:checked + label { background: var(--dorado); border-color: var(--dorado); color: var(--verde); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer { background: #0d1a0d; color: rgba(255,255,255,0.75); padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+    @media(max-width:900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:560px) { .footer-grid { grid-template-columns: 1fr; } }
+    .footer-logo { font-family: 'Playfair Display', serif; color: var(--blanco); font-size: 1.5rem; margin-bottom: 14px; }
+    .footer-logo img { height: 52px; width: auto; object-fit: contain; margin-bottom: 12px; }
+    .footer-sobre { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .footer-redes { display: flex; gap: 10px; }
+    .red-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.4); display: flex; align-items: center; justify-content: center; color: var(--dorado); font-size: 0.95rem; transition: all 0.2s; }
+    .red-btn:hover { background: var(--dorado); color: var(--verde); }
+    .footer-titulo { font-family: 'Playfair Display', serif; color: var(--dorado); font-size: 1rem; margin-bottom: 16px; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { color: rgba(255,255,255,0.62); font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--dorado); }
+    .footer-contacto li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 0.88rem; color: rgba(255,255,255,0.62); }
+    .footer-contacto li span:first-child { color: var(--dorado); flex-shrink: 0; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 12px; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+    /* ── WA FLOTANTE ── */
+    #wa-float { position: fixed; bottom: 28px; right: 24px; z-index: 900; }
+    .wa-float-btn { width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37,211,102,0.4); cursor: pointer; transition: all 0.3s; }
+    .wa-float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
+    .wa-float-btn svg { width: 32px; height: 32px; fill: #fff; }
+    .wa-pulse { position: absolute; inset: -4px; border-radius: 50%; background: rgba(37,211,102,0.3); animation: waPulse 2.5s infinite; }
+    @keyframes waPulse { 0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.4);opacity:0} }
+
+    /* ── LIGHTBOX ── */
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 2000; align-items: center; justify-content: center; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 8px; object-fit: contain; }
+    #lightbox-close { position: absolute; top: 20px; right: 28px; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }
+
+    /* ── PLACEHOLDER IMAGES ── */
+    .img-placeholder { background: linear-gradient(135deg, #2d4a2d 0%, #1a2e1a 100%); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.5); font-size: 0.8rem; text-align: center; padding: 20px; width: 100%; height: 100%; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media(max-width:768px) {
+      section { padding: 56px 0; }
+      .tipos-grid { grid-template-columns: repeat(3, 1fr); }
+      .salones-grid, .servicios-grid, .menus-grid { grid-template-columns: 1fr; }
+      .equipo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:480px) {
+      .tipos-grid { grid-template-columns: repeat(2, 1fr); }
+      .equipo-grid { grid-template-columns: 1fr; }
+      .nos-valores { grid-template-columns: 1fr; }
+    }
+
+    /* ── SPINNER ── */
+    #loading { position: fixed; inset: 0; background: var(--verde); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s, visibility 0.5s; }
+    #loading.hidden { opacity: 0; visibility: hidden; }
+    .spinner { width: 48px; height: 48px; border: 3px solid rgba(201,168,76,0.2); border-top-color: var(--dorado); border-radius: 50%; animation: spin 0.9s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── TOAST ── */
+    #toast { position: fixed; bottom: 100px; right: 24px; background: var(--verde); color: var(--blanco); padding: 14px 24px; border-radius: 10px; font-size: 0.92rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 1001; border-left: 4px solid var(--dorado); }
+    #toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- Netlify Identity redirect -->
+<script>
+  if (window.location.hash.includes("invite_token") || window.location.hash.includes("recovery_token") || window.location.hash.includes("confirmation_token")) {
+    window.location.href = "/admin/" + window.location.hash;
+  }
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
+    });
+  }
+</script>
+
+<!-- Loading -->
+<div id="loading"><div class="spinner"></div></div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- WhatsApp flotante -->
+<div id="wa-float">
+  <div class="wa-pulse"></div>
+  <a id="wa-float-link" href="#" target="_blank" rel="noopener" class="wa-float-btn" title="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.121.554 4.112 1.523 5.836L0 24l6.336-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 01-5.007-1.374l-.36-.213-3.727.881.943-3.619-.235-.374A9.76 9.76 0 012.182 12c0-5.413 4.405-9.818 9.818-9.818 5.413 0 9.818 4.405 9.818 9.818 0 5.413-4.405 9.818-9.818 9.818z"/></svg>
+  </a>
+</div>
+
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#inicio" class="nav-logo" id="nav-logo-wrap">
+      <span id="nav-logo-text">Grupo Foresta</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#salones">Salones &amp; Jardines</a></li>
+      <li><a href="#empresas">Empresas</a></li>
+      <li class="nav-dropdown">
+        <a href="#servicios">Servicios</a>
+        <ul class="dropdown-menu" id="servicios-dropdown">
+          <li><a href="#menus">Menús Gastronómicos</a></li>
+          <li><a href="#bebidas">Bebidas</a></li>
+          <li><a href="#restaurante">Restaurante</a></li>
+        </ul>
+      </li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#inicio" onclick="closeMenu()">Inicio</a>
+  <a href="#nosotros" onclick="closeMenu()">Nosotros</a>
+  <a href="#salones" onclick="closeMenu()">Salones &amp; Jardines</a>
+  <a href="#empresas" onclick="closeMenu()">Empresas</a>
+  <a href="#servicios" onclick="closeMenu()">Servicios</a>
+  <a href="#menus" class="m-sub" onclick="closeMenu()">↳ Menús</a>
+  <a href="#bebidas" class="m-sub" onclick="closeMenu()">↳ Bebidas</a>
+  <a href="#restaurante" class="m-sub" onclick="closeMenu()">↳ Restaurante</a>
+  <a href="#equipo" onclick="closeMenu()">Equipo</a>
+  <a href="#galeria" onclick="closeMenu()">Galería</a>
+  <a href="#contacto" onclick="closeMenu()">Contacto</a>
+</div>
+
+<!-- ═══════════════════════════════════════════ INICIO -->
+<section id="inicio" style="padding:0">
+  <div id="hero">
+    <div class="hero-slider" id="hero-slider"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <p class="hero-label" id="hero-label">Salón de Eventos Premium · CDMX</p>
+      <h1 class="hero-title" id="hero-title">Momentos que se convierten en recuerdos</h1>
+      <p class="hero-subtitle" id="hero-subtitle">El lugar perfecto para celebrar lo que más importa</p>
+      <div class="hero-btns" id="hero-btns"></div>
+    </div>
+    <div class="hero-dots" id="hero-dots"></div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO DESTACADO -->
+<section id="video-section" style="display:none">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label" id="video-label">Conócenos</p>
+      <h2 class="section-title" id="video-titulo">Descubre Grupo Foresta</h2>
+      <p class="section-sub" id="video-subtitulo" style="margin:0 auto 0"></p>
+    </div>
+    <div class="video-wrapper fade-in" id="video-wrapper"></div>
+  </div>
+</section>
+
+<!-- ═══ PROMOCIONES -->
+<section id="promociones" style="display:none">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Ofertas Especiales</p>
+      <h2 class="section-title white" id="promo-titulo">Promociones Vigentes</h2>
+    </div>
+    <div class="promo-grid" id="promo-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ TIPOS DE EVENTO -->
+<section id="tipos-evento">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label">Celebra con Nosotros</p>
+      <h2 class="section-title" id="tipos-titulo">Eventos para cada momento</h2>
+      <p class="section-sub" id="tipos-subtitulo" style="margin:0 auto"></p>
+    </div>
+    <div class="tipos-grid" id="tipos-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ VENTAJAS -->
+<section id="ventajas">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Por qué elegirnos</p>
+      <h2 class="section-title" id="ventajas-titulo">Nuestra diferencia</h2>
+      <p class="section-sub" id="ventajas-subtitulo"></p>
+    </div>
+    <div class="ventajas-grid" id="ventajas-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ CTA OSCURO -->
+<div class="cta-oscuro" id="cta-principal">
+  <div class="container">
+    <p class="section-label" id="cta-label">Agenda tu evento</p>
+    <h2 id="cta-titulo">¿Listo para crear algo memorable?</h2>
+    <p id="cta-texto">Contáctanos hoy y recibe una cotización personalizada sin costo.</p>
+    <div id="cta-btns"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ NOSOTROS -->
+<section id="nosotros">
+  <div class="container">
+    <div class="nos-hero fade-in" id="nos-hero">
+      <div class="nos-hero-overlay">
+        <h2 style="font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.6rem,4vw,2.5rem)" id="nos-hero-titulo">Nuestra Historia</h2>
+      </div>
+    </div>
+    <div class="nos-grid">
+      <div class="slide-left">
+        <p class="section-label">Quiénes somos</p>
+        <h2 class="section-title" id="nos-titulo">Tradición y elegancia en cada evento</h2>
+        <p style="color:#555;line-height:1.8;margin-bottom:20px" id="nos-texto"></p>
+        <p style="color:#555;line-height:1.8" id="nos-historia"></p>
+      </div>
+      <div class="slide-right">
+        <div class="nos-valores" id="nos-valores"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ SALONES -->
+<section id="salones">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Espacios únicos</p>
+      <h2 class="section-title" id="salones-titulo">Salones &amp; Jardines</h2>
+      <p class="section-sub" id="salones-subtitulo"></p>
+    </div>
+    <div class="salones-grid" id="salones-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ SALON DETALLE -->
+<section id="salon-detalle">
+  <div class="det-hero" id="det-hero">
+    <div class="det-hero-overlay">
+      <div class="det-hero-content container">
+        <span class="det-tipo" id="det-tipo"></span>
+        <h1 id="det-nombre"></h1>
+        <p id="det-desc-corta" style="color:rgba(255,255,255,0.82);font-size:1rem;margin-top:10px"></p>
+      </div>
+    </div>
+  </div>
+  <div class="det-body">
+    <div class="container">
+      <div class="back-btn" onclick="closeSalonDetail()">← Regresar a Salones</div>
+      <div class="det-grid">
+        <div>
+          <p id="det-desc-larga" style="color:#555;line-height:1.8;font-size:1rem;margin-bottom:32px"></p>
+          <div class="det-galeria" id="det-galeria"></div>
+          <div id="det-video-wrap" style="display:none;margin-top:28px">
+            <div class="video-wrapper" id="det-video"></div>
+          </div>
+        </div>
+        <div class="det-sidebar">
+          <h3>Capacidad &amp; Detalles</h3>
+          <div class="det-cap-row"><span class="det-cap-label">Capacidad mínima</span><span class="det-cap-val" id="det-cap-min"></span></div>
+          <div class="det-cap-row"><span class="det-cap-label">Capacidad máxima</span><span class="det-cap-val" id="det-cap-max"></span></div>
+          <div class="det-cap-row"><span class="det-cap-label">Tipo</span><span class="det-cap-val" id="det-tipo-val"></span></div>
+          <div class="det-caracteristicas" id="det-tags"></div>
+          <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
+            <a id="det-wa-btn" href="#" target="_blank" class="btn btn-wa" style="justify-content:center">💬 Cotizar este salón</a>
+            <a id="det-pdf-btn" href="#" target="_blank" class="btn btn-verde" style="justify-content:center;display:none">📄 Descargar PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ EMPRESAS -->
+<section id="empresas">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Eventos Corporativos</p>
+      <h2 class="section-title" id="emp-titulo">Soluciones para tu empresa</h2>
+      <p class="section-sub" id="emp-texto"></p>
+    </div>
+    <div class="emp-tipos" id="emp-tipos"></div>
+    <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap">
+      <a id="emp-wa-btn" href="#" target="_blank" class="btn btn-wa">💬 Cotizar evento corporativo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Lo que ofrecemos</p>
+      <h2 class="section-title" id="serv-titulo">Nuestros Servicios</h2>
+      <p class="section-sub" id="serv-subtitulo"></p>
+    </div>
+    <div class="servicios-grid" id="servicios-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ MENÚS -->
+<section id="menus">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Gastronomía</p>
+      <h2 class="section-title" id="menus-titulo">Menús Gastronómicos</h2>
+      <p class="section-sub" id="menus-subtitulo"></p>
+    </div>
+    <div class="menus-grid" id="menus-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ BEBIDAS -->
+<section id="bebidas">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label" style="color:var(--dorado)">Carta de Bebidas</p>
+      <h2 class="section-title white" id="beb-titulo">Selección de Bebidas</h2>
+      <p class="section-sub white" id="beb-subtitulo"></p>
+    </div>
+    <div class="bebidas-grid" id="bebidas-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ RESTAURANTE -->
+<section id="restaurante">
+  <div class="container">
+    <div class="rest-hero fade-in" id="rest-hero">
+      <div class="rest-hero-overlay"></div>
+    </div>
+    <div class="fade-in">
+      <p class="section-label">Experiencia culinaria</p>
+      <h2 class="section-title" id="rest-titulo">Nuestro Restaurante</h2>
+      <p class="section-sub" id="rest-texto"></p>
+    </div>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
+      <a id="rest-wa-btn" href="#" target="_blank" class="btn btn-wa">💬 Reservar mesa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ EQUIPO -->
+<section id="equipo">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label">Nuestros rostros</p>
+      <h2 class="section-title" id="equipo-titulo">El equipo detrás de la magia</h2>
+      <p class="section-sub" id="equipo-subtitulo" style="margin:0 auto"></p>
+    </div>
+    <div class="equipo-grid" id="equipo-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ GALERÍA -->
+<section id="galeria">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Nuestros eventos</p>
+      <h2 class="section-title" id="galeria-titulo">Galería</h2>
+      <p class="section-sub" id="galeria-subtitulo"></p>
+    </div>
+    <div class="galeria-filtros" id="galeria-filtros"></div>
+    <div class="galeria-grid" id="galeria-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label">Estamos aquí</p>
+      <h2 class="section-title" id="cont-titulo">Contáctanos</h2>
+      <p class="section-sub" id="cont-subtitulo" style="margin:0 auto 44px"></p>
+    </div>
+    <div class="contacto-grid">
+      <div>
+        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="form-contacto">
+          <input type="hidden" name="form-name" value="contacto">
+          <p style="display:none"><label>No llenar: <input name="bot-field"></label></p>
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico *</label>
+            <input type="email" name="email" required placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" placeholder="+52 55 0000 0000">
+          </div>
+          <div class="form-group">
+            <label>Tipo de evento</label>
+            <select name="tipo_evento" id="form-tipo-evento">
+              <option value="">Selecciona una opción</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Número de personas</label>
+            <input type="number" name="personas" placeholder="Ej. 150" min="1">
+          </div>
+          <div class="form-group">
+            <label>Fecha tentativa</label>
+            <input type="date" name="fecha">
+          </div>
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea name="mensaje" placeholder="Cuéntanos sobre tu evento..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-verde" style="width:100%;justify-content:center">Enviar solicitud</button>
+        </form>
+      </div>
+      <div class="contacto-info" id="contacto-info"></div>
+    </div>
+    <div class="mapa-wrapper" id="mapa-wrapper">
+      <iframe id="mapa-iframe" src="" allowfullscreen loading="lazy" title="Ubicación Grupo Foresta"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ ENCUESTA -->
+<section id="encuesta">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:44px">
+      <p class="section-label" style="color:var(--dorado)">Tu opinión nos importa</p>
+      <h2 class="section-title white" id="enc-titulo">Encuesta de Satisfacción</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto">
+      <form name="encuesta" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="encuesta">
+        <div class="radio-grupo">
+          <label>1. Calidad de la comida</label>
+          <div class="radio-opciones">
+            <input type="radio" name="calidad_comida" id="cc1" value="Excelente"><label for="cc1">Excelente</label>
+            <input type="radio" name="calidad_comida" id="cc2" value="Muy buena"><label for="cc2">Muy buena</label>
+            <input type="radio" name="calidad_comida" id="cc3" value="Buena"><label for="cc3">Buena</label>
+            <input type="radio" name="calidad_comida" id="cc4" value="Regular"><label for="cc4">Regular</label>
+            <input type="radio" name="calidad_comida" id="cc5" value="Deficiente"><label for="cc5">Deficiente</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>2. Presentación de la comida</label>
+          <div class="radio-opciones">
+            <input type="radio" name="presentacion_comida" id="pc1" value="Excelente"><label for="pc1">Excelente</label>
+            <input type="radio" name="presentacion_comida" id="pc2" value="Muy buena"><label for="pc2">Muy buena</label>
+            <input type="radio" name="presentacion_comida" id="pc3" value="Buena"><label for="pc3">Buena</label>
+            <input type="radio" name="presentacion_comida" id="pc4" value="Regular"><label for="pc4">Regular</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>3. Presentación del personal</label>
+          <div class="radio-opciones">
+            <input type="radio" name="presentacion_personal" id="pp1" value="Excelente"><label for="pp1">Excelente</label>
+            <input type="radio" name="presentacion_personal" id="pp2" value="Muy buena"><label for="pp2">Muy buena</label>
+            <input type="radio" name="presentacion_personal" id="pp3" value="Buena"><label for="pp3">Buena</label>
+            <input type="radio" name="presentacion_personal" id="pp4" value="Regular"><label for="pp4">Regular</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>4. Atención de meseros</label>
+          <div class="radio-opciones">
+            <input type="radio" name="atencion_meseros" id="am1" value="Excelente"><label for="am1">Excelente</label>
+            <input type="radio" name="atencion_meseros" id="am2" value="Muy buena"><label for="am2">Muy buena</label>
+            <input type="radio" name="atencion_meseros" id="am3" value="Buena"><label for="am3">Buena</label>
+            <input type="radio" name="atencion_meseros" id="am4" value="Regular"><label for="am4">Regular</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>5. Atención del capitán</label>
+          <div class="radio-opciones">
+            <input type="radio" name="atencion_capitan" id="ac1" value="Excelente"><label for="ac1">Excelente</label>
+            <input type="radio" name="atencion_capitan" id="ac2" value="Muy buena"><label for="ac2">Muy buena</label>
+            <input type="radio" name="atencion_capitan" id="ac3" value="Buena"><label for="ac3">Buena</label>
+            <input type="radio" name="atencion_capitan" id="ac4" value="Regular"><label for="ac4">Regular</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>6. Satisfacción general</label>
+          <div class="radio-opciones">
+            <input type="radio" name="satisfaccion" id="sg1" value="Muy satisfecho"><label for="sg1">Muy satisfecho</label>
+            <input type="radio" name="satisfaccion" id="sg2" value="Satisfecho"><label for="sg2">Satisfecho</label>
+            <input type="radio" name="satisfaccion" id="sg3" value="Neutral"><label for="sg3">Neutral</label>
+            <input type="radio" name="satisfaccion" id="sg4" value="Insatisfecho"><label for="sg4">Insatisfecho</label>
+          </div>
+        </div>
+        <div class="radio-grupo">
+          <label>7. ¿Recomendarías Grupo Foresta?</label>
+          <div class="radio-opciones">
+            <input type="radio" name="recomendaria" id="rec1" value="Definitivamente sí"><label for="rec1">Definitivamente sí</label>
+            <input type="radio" name="recomendaria" id="rec2" value="Probablemente sí"><label for="rec2">Probablemente sí</label>
+            <input type="radio" name="recomendaria" id="rec3" value="No sé"><label for="rec3">No sé</label>
+            <input type="radio" name="recomendaria" id="rec4" value="No"><label for="rec4">No</label>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:24px">
+          <label style="color:rgba(255,255,255,0.85)">Sugerencias o comentarios</label>
+          <textarea name="sugerencias" placeholder="Tu opinión nos ayuda a mejorar..." style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;min-height:100px"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Enviar encuesta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo" id="footer-logo-wrap">Grupo Foresta</div>
+        <p class="footer-sobre" id="footer-sobre"></p>
+        <div class="footer-redes" id="footer-redes"></div>
+      </div>
+      <div>
+        <p class="footer-titulo">Navegación</p>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#salones">Salones &amp; Jardines</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-titulo">Servicios</p>
+        <ul class="footer-links" id="footer-servicios-links"></ul>
+      </div>
+      <div>
+        <p class="footer-titulo">Contacto</p>
+        <ul class="footer-contacto" id="footer-contacto-info"></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footer-copy"></span>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="#" style="color:rgba(255,255,255,0.4)" id="footer-privacidad">Política de privacidad</a>
+        <span id="footer-creditos" style="color:rgba(255,255,255,0.25)"></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════ JSON-LD -->
+<script id="jsonld-script" type="application/ld+json"></script>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  UTILIDADES
+// ═══════════════════════════════════════════════════════════════
+const $ = id => document.getElementById(id);
+const txt = (id, val) => { const el=$(id); if(el&&val!==undefined) el.textContent=val; };
+const html = (id, val) => { const el=$(id); if(el&&val!==undefined) el.innerHTML=val; };
+const set = (id, attr, val) => { const el=$(id); if(el&&val!==undefined) el.setAttribute(attr,val); };
+
+function waLink(phone, msg) {
+  const num = (phone||'').replace(/\D/g,'');
+  return `https://wa.me/${num}?text=${encodeURIComponent(msg||'')}`;
+}
+function imgEl(src, alt, cls) {
+  if (!src) return `<div class="img-placeholder ${cls||''}">${alt||'Imagen próximamente'}</div>`;
+  return `<img src="${src}" alt="${alt||''}" class="${cls||''}" loading="lazy">`;
+}
+function showToast(msg, dur=3500) {
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), dur);
+}
+function videoEmbed(url) {
+  if (!url) return '';
+  if (url.includes('youtube.com')||url.includes('youtu.be')) {
+    const id = url.includes('youtu.be') ? url.split('/').pop().split('?')[0]
+              : url.split('v=')[1]?.split('&')[0] || url.split('/').pop();
+    return `<iframe src="https://www.youtube.com/embed/${id}?rel=0" allowfullscreen></iframe>`;
+  }
+  if (url.includes('vimeo.com')) {
+    const id = url.split('/').pop();
+    return `<iframe src="https://player.vimeo.com/video/${id}" allowfullscreen></iframe>`;
+  }
+  return `<video src="${url}" controls style="width:100%;height:100%;object-fit:contain"></video>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  MAIN — FETCH & RENDER
+// ═══════════════════════════════════════════════════════════════
+let C = {}; // contenido global
+
+fetch('/content.json?v=' + Date.now())
+  .then(r => { if(!r.ok) throw new Error('No se pudo cargar content.json'); return r.json(); })
+  .then(data => { C = data; render(C); })
+  .catch(err => { console.error(err); $('loading').classList.add('hidden'); })
+  .finally(() => setTimeout(()=>$('loading').classList.add('hidden'), 600));
+
+function render(d) {
+  renderSEO(d.seo || {}, d.negocio || {});
+  renderNav(d);
+  renderHero(d.hero || {}, d.negocio || {});
+  renderVideo(d.video || {});
+  renderPromociones(d.promociones || [], d.negocio || {});
+  renderTipos(d.tipos_evento || {});
+  renderVentajas(d.ventajas || {});
+  renderCTA(d.cta_principal || {}, d.negocio || {});
+  renderNosotros(d.nosotros || {});
+  renderSalones(d.salones || []);
+  renderEmpresas(d.empresas || {}, d.negocio || {});
+  renderServicios(d.servicios || [], d.negocio || {});
+  renderMenus(d.menus || {});
+  renderBebidas(d.bebidas || {});
+  renderRestaurante(d.restaurante || {}, d.negocio || {});
+  renderEquipo(d.equipo || {});
+  renderGaleria(d.galeria || {});
+  renderContacto(d.contacto || {}, d.negocio || {});
+  renderFooter(d.footer || {}, d.negocio || {});
+  renderWAFloat(d.whatsapp_flotante || {}, d.negocio || {});
+  renderJsonLD(d.seo || {}, d.negocio || {});
+  initObserver();
+  initHeroSlider();
+  handleHash();
+}
+
+// ── SEO ──
+function renderSEO(s, n) {
+  const title = s.title || (n.nombre + ' – Salón de Eventos CDMX');
+  document.title = title;
+  txt('meta-title', title);
+  set('meta-description','content', s.meta_description||'');
+  set('meta-keywords','content', s.keywords||'');
+  set('og-title','content', s.og_title||title);
+  set('og-description','content', s.og_description||s.meta_description||'');
+  set('og-image','content', s.og_image||'');
+  if(s.favicon) set('favicon','href',s.favicon);
+}
+
+// ── NAV ──
+function renderNav(d) {
+  const n = d.negocio || {};
+  const logo = n.logo;
+  const logoWrap = $('nav-logo-wrap');
+  if (logo) {
+    logoWrap.innerHTML = `<img src="${logo}" alt="${n.nombre||'Logo'}" style="height:48px;object-fit:contain">`;
+  } else {
+    txt('nav-logo-text', n.nombre||'Grupo Foresta');
+  }
+}
+
+// ── HERO ──
+function renderHero(h, n) {
+  txt('hero-label', h.label||'Salón de Eventos Premium · CDMX');
+  txt('hero-title', h.titulo||'Momentos que se convierten en recuerdos');
+  txt('hero-subtitle', h.subtitulo||'');
+  const slider=$('hero-slider'), dots=$('hero-dots'), btns=$('hero-btns');
+  const imgs = h.imagenes || [{}];
+  imgs.forEach((img,i) => {
+    const slide = document.createElement('div');
+    slide.className = 'hero-slide' + (i===0?' active':'');
+    if(img.url) slide.style.backgroundImage=`url('${img.url}')`;
+    else slide.style.background='linear-gradient(135deg,#1a2e1a,#0d1a0d)';
+    if(img.url) slide.style.backgroundSize='cover';
+    slider.appendChild(slide);
+    const dot = document.createElement('div');
+    dot.className = 'hero-dot'+(i===0?' active':'');
+    dot.onclick = ()=>goSlide(i);
+    dots.appendChild(dot);
+  });
+  const wa = n.whatsapp || '';
+  const btnList = h.botones || [];
+  btnList.forEach(b => {
+    if(!b.texto) return;
+    const a = document.createElement('a');
+    a.className = `btn btn-${b.estilo||'primary'}`;
+    a.textContent = b.texto;
+    if(b.tipo==='whatsapp') a.href = waLink(wa, b.mensaje||b.texto);
+    else a.href = b.enlace||'#';
+    if(b.tipo==='whatsapp'||b.enlace?.startsWith('http')) a.target='_blank';
+    btns.appendChild(a);
+  });
+}
+let slideIdx=0, slideTimer;
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if(slides.length<2) return;
+  slideTimer = setInterval(()=>goSlide((slideIdx+1)%slides.length), 5000);
+}
+function goSlide(n) {
+  const slides=document.querySelectorAll('.hero-slide'), dots=document.querySelectorAll('.hero-dot');
+  slides[slideIdx].classList.remove('active'); dots[slideIdx].classList.remove('active');
+  slideIdx=n;
+  slides[slideIdx].classList.add('active'); dots[slideIdx].classList.add('active');
+  clearInterval(slideTimer);
+  slideTimer=setInterval(()=>goSlide((slideIdx+1)%slides.length),5000);
+}
+
+// ── VIDEO ──
+function renderVideo(v) {
+  if(!v.activo||!v.url) return;
+  $('video-section').style.display='block';
+  txt('video-label', v.label||'Conócenos');
+  txt('video-titulo', v.titulo||'Descubre Grupo Foresta');
+  txt('video-subtitulo', v.subtitulo||'');
+  $('video-wrapper').innerHTML = videoEmbed(v.url);
+}
+
+// ── PROMOCIONES ──
+function renderPromociones(promos, n) {
+  const activas = (promos||[]).filter(p=>p.activo!==false);
+  if(!activas.length) return;
+  $('promociones').style.display='block';
+  txt('promo-titulo', 'Promociones Vigentes');
+  const grid=$('promo-grid');
+  activas.forEach(p => {
+    grid.innerHTML += `<div class="promo-card fade-in">
+      ${p.imagen?`<img src="${p.imagen}" alt="${p.titulo||''}" loading="lazy">`:'<div class="img-placeholder" style="height:200px">Imagen de promoción</div>'}
+      <div class="promo-body">
+        ${p.fecha?`<p class="promo-fecha">${p.fecha}</p>`:''}
+        <h3 class="promo-nombre">${p.titulo||''}</h3>
+        <p class="promo-desc">${p.descripcion||''}</p>
+        ${p.boton_texto?`<a href="${p.boton_tipo==='whatsapp'?waLink(n.whatsapp||'',p.boton_mensaje||p.titulo):p.boton_enlace||'#'}" class="btn btn-primary" ${p.boton_tipo==='whatsapp'?'target="_blank"':''}>${p.boton_texto}</a>`:''}
+      </div>
+    </div>`;
+  });
+}
+
+// ── TIPOS EVENTO ──
+function renderTipos(t) {
+  txt('tipos-titulo', t.titulo||'Eventos para cada momento');
+  txt('tipos-subtitulo', t.subtitulo||'');
+  const grid=$('tipos-grid');
+  (t.items||[]).forEach(item=>{
+    grid.innerHTML+=`<div class="tipo-card fade-in">
+      <div class="tipo-icono">${item.icono||'🎉'}</div>
+      <p class="tipo-nombre">${item.nombre||''}</p>
+    </div>`;
+  });
+}
+
+// ── VENTAJAS ──
+function renderVentajas(v) {
+  txt('ventajas-titulo', v.titulo||'Nuestra diferencia');
+  txt('ventajas-subtitulo', v.subtitulo||'');
+  const grid=$('ventajas-grid');
+  (v.items||[]).forEach(item=>{
+    grid.innerHTML+=`<div class="ventaja-card fade-in">
+      <div class="ventaja-icono">${item.icono||'✦'}</div>
+      <h3 class="ventaja-titulo">${item.titulo||''}</h3>
+      <p class="ventaja-desc">${item.descripcion||''}</p>
+    </div>`;
+  });
+}
+
+// ── CTA PRINCIPAL ──
+function renderCTA(cta, n) {
+  txt('cta-label', cta.label||'Agenda tu evento');
+  txt('cta-titulo', cta.titulo||'¿Listo para crear algo memorable?');
+  txt('cta-texto', cta.texto||'Contáctanos hoy.');
+  const btns=$('cta-btns');
+  (cta.botones||[]).forEach(b=>{
+    if(!b.texto) return;
+    const a=document.createElement('a');
+    a.className=`btn btn-${b.estilo||'primary'}`;
+    a.textContent=b.texto;
+    if(b.tipo==='whatsapp'){a.href=waLink(n.whatsapp||'',b.mensaje||b.texto);a.target='_blank';}
+    else a.href=b.enlace||'#contacto';
+    btns.appendChild(a);
+  });
+}
+
+// ── NOSOTROS ──
+function renderNosotros(nos) {
+  const nosHero=$('nos-hero');
+  if(nos.hero_imagen) nosHero.style.backgroundImage=`url('${nos.hero_imagen}')`;
+  else nosHero.style.background='linear-gradient(135deg,#2d4a2d,#1a2e1a)';
+  txt('nos-hero-titulo', nos.hero_titulo||'Nuestra Historia');
+  txt('nos-titulo', nos.titulo||'Tradición y elegancia');
+  txt('nos-texto', nos.texto||'');
+  txt('nos-historia', nos.historia||'');
+  const val=$('nos-valores');
+  const items=[
+    {t:'Misión', d:nos.mision},
+    {t:'Visión', d:nos.vision},
+    ...(nos.valores||[]).map(v=>({t:v.titulo||v,d:v.descripcion||''}))
+  ];
+  items.forEach(v=>{
+    if(!v.d) return;
+    val.innerHTML+=`<div class="valor-item"><p class="valor-titulo">${v.t}</p><p class="valor-texto">${v.d}</p></div>`;
+  });
+}
+
+// ── SALONES ──
+function renderSalones(salones) {
+  const activos = salones.filter(s=>s.activo!==false);
+  const grid=$('salones-grid');
+  txt('salones-titulo', 'Salones & Jardines');
+  activos.forEach(s=>{
+    grid.innerHTML+=`<div class="salon-card fade-in" onclick="openSalon('${s.slug}')">
+      <div class="salon-img">
+        ${s.imagen?`<img src="${s.imagen}" alt="${s.nombre}" loading="lazy">`:'<div class="img-placeholder" style="height:240px">'+s.nombre+'</div>'}
+        <span class="salon-tipo-badge">${s.tipo||'Salón'}</span>
+      </div>
+      <div class="salon-body">
+        <h3 class="salon-nombre">${s.nombre||''}</h3>
+        <p class="salon-desc">${s.descripcion_corta||''}</p>
+        <p class="salon-cap">
+          <span>Min: ${s.capacidad_min||'—'} pax</span>
+          <span>Max: ${s.capacidad_max||'—'} pax</span>
+        </p>
+        <div class="salon-footer">
+          <a class="btn btn-verde" onclick="event.stopPropagation();openSalon('${s.slug}')">Ver detalles</a>
+          ${s.whatsapp_mensaje?`<a href="${waLink(C.negocio?.whatsapp||'',s.whatsapp_mensaje)}" target="_blank" class="btn btn-wa" onclick="event.stopPropagation()">💬 Cotizar</a>`:''}
+        </div>
+      </div>
+    </div>`;
+  });
+}
+
+function openSalon(slug) {
+  const s = (C.salones||[]).find(x=>x.slug===slug);
+  if(!s) return;
+  const det=$('salon-detalle'), main=$('salones');
+  main.style.display='none'; det.classList.add('active');
+  const hero=$('det-hero');
+  if(s.imagen) hero.style.backgroundImage=`url('${s.imagen}')`;
+  else hero.style.background='linear-gradient(135deg,#2d4a2d,#1a2e1a)';
+  txt('det-tipo', s.tipo||'Salón');
+  txt('det-nombre', s.nombre||'');
+  txt('det-desc-corta', s.descripcion_corta||'');
+  txt('det-desc-larga', s.descripcion_larga||'');
+  txt('det-cap-min', (s.capacidad_min||'—')+' personas');
+  txt('det-cap-max', (s.capacidad_max||'—')+' personas');
+  txt('det-tipo-val', s.tipo||'');
+  const tags=$('det-tags'); tags.innerHTML='';
+  (s.caracteristicas||[]).forEach(c=>{tags.innerHTML+=`<span class="det-tag">${c}</span>`;});
+  const gal=$('det-galeria'); gal.innerHTML='';
+  (s.galeria||[]).forEach(img=>{gal.innerHTML+=`<img src="${img}" alt="${s.nombre}" onclick="openLightbox('${img}')">`;});
+  const wa=$('det-wa-btn');
+  wa.href=waLink(C.negocio?.whatsapp||'', s.whatsapp_mensaje||`Hola, quiero cotizar el salón ${s.nombre} de Grupo Foresta`);
+  const pdf=$('det-pdf-btn');
+  if(s.pdf){pdf.href=s.pdf;pdf.style.display='flex';}else pdf.style.display='none';
+  const vidWrap=$('det-video-wrap');
+  if(s.video){vidWrap.style.display='block';$('det-video').innerHTML=videoEmbed(s.video);}
+  else vidWrap.style.display='none';
+  window.location.hash='salon-'+slug;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function closeSalonDetail() {
+  $('salon-detalle').classList.remove('active');
+  $('salones').style.display='';
+  history.pushState(null,null,' ');
+  setTimeout(()=>document.getElementById('salones').scrollIntoView({behavior:'smooth'}),100);
+}
+
+// ── EMPRESAS ──
+function renderEmpresas(emp, n) {
+  txt('emp-titulo', emp.titulo||'Soluciones para tu empresa');
+  txt('emp-texto', emp.texto||'');
+  const tipos=$('emp-tipos');
+  (emp.tipos_evento||[]).forEach(t=>{
+    tipos.innerHTML+=`<div class="emp-tipo fade-in">
+      <div class="emp-tipo-icon">${t.icono||'🏢'}</div>
+      <p class="emp-tipo-nombre">${t.nombre||''}</p>
+    </div>`;
+  });
+  const waBtn=$('emp-wa-btn');
+  waBtn.href=waLink(n.whatsapp||'', emp.whatsapp_mensaje||'Hola, quiero cotizar un evento corporativo en Grupo Foresta');
+  txt('emp-wa-btn', emp.whatsapp_boton||'💬 Cotizar evento corporativo');
+}
+
+// ── SERVICIOS ──
+function renderServicios(servicios, n) {
+  const activos=(servicios||[]).filter(s=>s.activo!==false);
+  txt('serv-titulo','Nuestros Servicios');
+  const grid=$('servicios-grid');
+  activos.forEach(s=>{
+    grid.innerHTML+=`<div class="servicio-card fade-in">
+      <div class="servicio-img">
+        ${s.imagen?`<img src="${s.imagen}" alt="${s.nombre}" loading="lazy">`:'<div class="img-placeholder" style="height:200px">'+s.nombre+'</div>'}
+      </div>
+      <div class="servicio-body">
+        <p class="serv-cat">${s.categoria||''}</p>
+        <h3 class="serv-nombre">${s.nombre||''}</h3>
+        <p class="serv-desc">${s.descripcion||''}</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          ${s.boton_texto?`<a href="${s.boton_tipo==='whatsapp'?waLink(n.whatsapp||'',s.boton_mensaje||s.nombre):(s.boton_enlace||'#')}" class="btn btn-${s.boton_tipo==='whatsapp'?'wa':'verde'}" ${s.boton_tipo==='whatsapp'?'target="_blank"':''}>${s.boton_texto}</a>`:''}
+          ${s.pdf?`<a href="${s.pdf}" target="_blank" class="btn btn-outline" style="color:var(--verde);border-color:var(--verde)">📄 PDF</a>`:''}
+        </div>
+      </div>
+    </div>`;
+  });
+}
+
+// ── MENÚS ──
+function renderMenus(m) {
+  txt('menus-titulo', m.titulo||'Menús Gastronómicos');
+  txt('menus-subtitulo', m.subtitulo||'');
+  const grid=$('menus-grid');
+  (m.items||[]).filter(x=>x.activo!==false).forEach(mn=>{
+    const tiempos=(mn.tiempos||[]).map(t=>`<div class="menu-tiempo-item"><span class="mt-label">${t.nombre||''}</span><span class="mt-platos">${(t.platillos||[]).join(', ')||''}</span></div>`).join('');
+    grid.innerHTML+=`<div class="menu-card fade-in">
+      <div class="menu-img">
+        ${mn.imagen?`<img src="${mn.imagen}" alt="${mn.nombre}" loading="lazy">`:'<div class="img-placeholder" style="height:200px">'+mn.nombre+'</div>'}
+      </div>
+      <div class="menu-body">
+        <span class="menu-cat-badge">${mn.categoria||''}</span>
+        <h3 class="menu-nombre">${mn.nombre||''}</h3>
+        <p class="menu-desc">${mn.descripcion||''}</p>
+        ${tiempos?`<div class="menu-tiempos">${tiempos}</div>`:''}
+        ${mn.precio?`<p class="menu-precio">Desde $${mn.precio} MXN p/p</p>`:''}
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          ${mn.pdf?`<a href="${mn.pdf}" target="_blank" class="btn btn-verde">📄 Ver menú PDF</a>`:''}
+        </div>
+      </div>
+    </div>`;
+  });
+}
+
+// ── BEBIDAS ──
+function renderBebidas(b) {
+  txt('beb-titulo', b.titulo||'Selección de Bebidas');
+  txt('beb-subtitulo', b.subtitulo||'');
+  const grid=$('bebidas-grid');
+  (b.categorias||[]).forEach(cat=>{
+    const items=(cat.bebidas||[]).map(beb=>`<div class="bebida-item">
+      <div class="beb-info"><p class="beb-nombre">${beb.nombre||''}</p>${beb.nota?`<p class="beb-nota">${beb.nota}</p>`:''}</div>
+      ${beb.presentacion?`<span class="beb-ml">${beb.presentacion}</span>`:''}
+    </div>`).join('');
+    grid.innerHTML+=`<div class="bebida-categoria fade-in">
+      <h3 class="bebida-cat-titulo">${cat.categoria||''}</h3>
+      ${items}
+    </div>`;
+  });
+}
+
+// ── RESTAURANTE ──
+function renderRestaurante(r, n) {
+  const hero=$('rest-hero');
+  if(r.imagen_hero) hero.style.backgroundImage=`url('${r.imagen_hero}')`;
+  else hero.style.background='linear-gradient(135deg,#2d4a2d,#1a2e1a)';
+  txt('rest-titulo', r.titulo||'Nuestro Restaurante');
+  txt('rest-texto', r.descripcion||'');
+  const waBtn=$('rest-wa-btn');
+  waBtn.href=waLink(n.whatsapp||'', r.whatsapp_mensaje||'Hola, quiero reservar una mesa en el restaurante de Grupo Foresta');
+}
+
+// ── EQUIPO ──
+function renderEquipo(e) {
+  txt('equipo-titulo', e.titulo||'El equipo detrás de la magia');
+  txt('equipo-subtitulo', e.subtitulo||'');
+  const grid=$('equipo-grid');
+  (e.personas||[]).filter(p=>p.activo!==false).forEach(p=>{
+    const redes=(p.redes||[]).map(r=>`<a href="${r.url||'#'}" target="_blank" class="eq-red" title="${r.red||''}">${r.icono||'↗'}</a>`).join('');
+    grid.innerHTML+=`<div class="equipo-card fade-in">
+      <div class="eq-foto">
+        ${p.foto?`<img src="${p.foto}" alt="${p.nombre}" loading="lazy">`:'<div class="img-placeholder" style="height:260px">'+p.nombre+'</div>'}
+      </div>
+      <div class="eq-body">
+        <h3 class="eq-nombre">${p.nombre||''}</h3>
+        <p class="eq-puesto">${p.puesto||''}</p>
+        ${p.descripcion?`<p class="eq-desc">${p.descripcion}</p>`:''}
+        ${p.frase?`<p class="eq-frase">"${p.frase}"</p>`:''}
+        ${redes?`<div class="eq-redes">${redes}</div>`:''}
+      </div>
+    </div>`;
+  });
+}
+
+// ── GALERÍA ──
+const categoriasFiltro = ['Todos','Bodas','XV años','Graduaciones','Corporativos','Jardines','Salones','Montajes','Decoración','Platillos','Videos'];
+let filtroActual='Todos';
+function renderGaleria(g) {
+  txt('galeria-titulo', g.titulo||'Galería');
+  txt('galeria-subtitulo', g.subtitulo||'');
+  const filtros=$('galeria-filtros');
+  categoriasFiltro.forEach(cat=>{
+    const btn=document.createElement('button');
+    btn.className='filtro-btn'+(cat==='Todos'?' active':'');
+    btn.textContent=cat;
+    btn.onclick=()=>filterGaleria(cat);
+    filtros.appendChild(btn);
+  });
+  renderGaleriaItems(g.items||[]);
+}
+function renderGaleriaItems(items) {
+  const grid=$('galeria-grid'); grid.innerHTML='';
+  const activos=items.filter(i=>i.activo!==false&&(filtroActual==='Todos'||i.categoria===filtroActual));
+  activos.forEach(item=>{
+    const isVideo=item.tipo==='video';
+    grid.innerHTML+=`<div class="gal-item fade-in" onclick="${isVideo?`window.open('${item.url||item.archivo}','_blank')`:`openLightbox('${item.archivo||item.url||''}')`}">
+      ${item.tipo==='video'?`<div style="background:#1a2e1a;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem">▶</div>`:(item.archivo||item.url)?`<img src="${item.archivo||item.url}" alt="${item.titulo||''}" loading="lazy">`:'<div class="img-placeholder">'+item.titulo+'</div>'}
+      ${isVideo?`<span class="gal-video-badge">Video</span>`:''}
+      <div class="gal-overlay">
+        <div class="gal-info">
+          <p class="gal-titulo">${item.titulo||''}</p>
+          ${item.descripcion?`<p class="gal-desc">${item.descripcion}</p>`:''}
+        </div>
+      </div>
+    </div>`;
+  });
+}
+function filterGaleria(cat) {
+  filtroActual=cat;
+  document.querySelectorAll('.filtro-btn').forEach(b=>{b.classList.toggle('active',b.textContent===cat);});
+  renderGaleriaItems((C.galeria||{}).items||[]);
+  initObserver();
+}
+
+// ── CONTACTO ──
+function renderContacto(cont, n) {
+  txt('cont-titulo', cont.titulo||'Contáctanos');
+  txt('cont-subtitulo', cont.subtitulo||'');
+  const sel=$('form-tipo-evento');
+  (cont.tipos_evento||[]).forEach(t=>{
+    sel.innerHTML+=`<option value="${t}">${t}</option>`;
+  });
+  const info=$('contacto-info');
+  const dir=n.direccion||'';
+  const tel=(n.telefonos||[]);
+  const email=n.email||'';
+  if(dir) info.innerHTML+=`<div class="info-item"><div class="info-icon">📍</div><div class="info-texto"><strong>Dirección</strong><span>${dir}</span></div></div>`;
+  tel.forEach(t=>{if(t) info.innerHTML+=`<div class="info-item"><div class="info-icon">📞</div><div class="info-texto"><strong>Teléfono</strong><a href="tel:${t}">${t}</a></div></div>`;});
+  if(email) info.innerHTML+=`<div class="info-item"><div class="info-icon">✉️</div><div class="info-texto"><strong>Email</strong><a href="mailto:${email}">${email}</a></div></div>`;
+  if(n.whatsapp) info.innerHTML+=`<div class="info-item"><div class="info-icon" style="background:#25D366">💬</div><div class="info-texto"><strong>WhatsApp</strong><a href="${waLink(n.whatsapp,'Hola, quiero información sobre Grupo Foresta')}" target="_blank">${n.whatsapp}</a></div></div>`;
+  const mapa=$('mapa-iframe');
+  if(n.mapa_embed_url) {
+    mapa.src=n.mapa_embed_url;
+  } else if(n.coordenadas?.lat&&n.coordenadas?.lng) {
+    mapa.src=`https://www.google.com/maps?q=${n.coordenadas.lat},${n.coordenadas.lng}&z=16&output=embed`;
+  }
+}
+
+// ── FOOTER ──
+function renderFooter(f, n) {
+  const logoWrap=$('footer-logo-wrap');
+  if(n.logo) logoWrap.innerHTML=`<img src="${n.logo}" alt="${n.nombre||'Grupo Foresta'}" style="height:52px;object-fit:contain;margin-bottom:12px">`;
+  else logoWrap.textContent=n.nombre||'Grupo Foresta';
+  txt('footer-sobre', f.sobre||n.descripcion||'');
+  const redes=$('footer-redes');
+  (n.redes_sociales||[]).forEach(r=>{
+    redes.innerHTML+=`<a href="${r.url||'#'}" target="_blank" class="red-btn" title="${r.red||''}">${r.icono||'↗'}</a>`;
+  });
+  const sLinks=$('footer-servicios-links');
+  (f.servicios_links||['Banquetes','Catering','Menús','Bebidas','Restaurante']).forEach(s=>{
+    sLinks.innerHTML+=`<li><a href="#servicios">${s}</a></li>`;
+  });
+  const cInfo=$('footer-contacto-info');
+  if(n.direccion) cInfo.innerHTML+=`<li><span>📍</span><span>${n.direccion}</span></li>`;
+  (n.telefonos||[]).forEach(t=>{if(t)cInfo.innerHTML+=`<li><span>📞</span><span>${t}</span></li>`;});
+  if(n.email) cInfo.innerHTML+=`<li><span>✉️</span><span>${n.email}</span></li>`;
+  const year=new Date().getFullYear();
+  txt('footer-copy', f.copyright||`© ${year} ${n.nombre||'Grupo Foresta'}. Todos los derechos reservados.`);
+  const priv=$('footer-privacidad');
+  if(f.privacidad_url) priv.href=f.privacidad_url;
+  if(f.privacidad_texto) txt('footer-privacidad',f.privacidad_texto);
+  txt('footer-creditos', f.creditos||'');
+}
+
+// ── WA FLOTANTE ──
+function renderWAFloat(wa, n) {
+  if(wa.activo===false){$('wa-float').style.display='none';return;}
+  const phone=wa.telefono||n.whatsapp||'';
+  const msg=wa.mensaje||'Hola, quiero información sobre Grupo Foresta';
+  $('wa-float-link').href=waLink(phone,msg);
+}
+
+// ── JSON-LD ──
+function renderJsonLD(s, n) {
+  const ld={
+    "@context":"https://schema.org",
+    "@type":["LocalBusiness","EventVenue"],
+    "name":n.nombre||"Grupo Foresta",
+    "description":s.meta_description||"",
+    "url":window.location.origin,
+    "telephone":n.telefonos?.[0]||"",
+    "email":n.email||"",
+    "image":s.og_image||"",
+    "address":{"@type":"PostalAddress","streetAddress":n.direccion||"","addressLocality":"Ciudad de México","addressRegion":"CDMX","postalCode":"11950","addressCountry":"MX"},
+    "geo":{"@type":"GeoCoordinates","latitude":n.coordenadas?.lat||19.3966279,"longitude":n.coordenadas?.lng||-99.2232032},
+    "openingHours":"Mo-Su 09:00-21:00",
+    "priceRange":"$$$$",
+    "servesCuisine":"Mexicana, Internacional"
+  };
+  $('jsonld-script').textContent=JSON.stringify(ld);
+}
+
+// ── LIGHTBOX ──
+function openLightbox(src) { if(!src)return; $('lightbox-img').src=src; $('lightbox').classList.add('open'); }
+function closeLightbox() { $('lightbox').classList.remove('open'); $('lightbox-img').src=''; }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+// ── HASH ROUTING ──
+function handleHash() {
+  const hash=window.location.hash;
+  if(hash.startsWith('#salon-')) {
+    const slug=hash.replace('#salon-','');
+    openSalon(slug);
+  }
+}
+window.addEventListener('hashchange', handleHash);
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  $('navbar').classList.toggle('scrolled', window.scrollY>50);
+});
+
+// ── MENU HAMBURGUESA ──
+function toggleMenu(){$('hamburger').classList.toggle('open');$('mobile-menu').classList.toggle('open');}
+function closeMenu(){$('hamburger').classList.remove('open');$('mobile-menu').classList.remove('open');}
+
+// ── INTERSECTION OBSERVER ──
+function initObserver() {
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.12});
+  document.querySelectorAll('.fade-in,.slide-left,.slide-right').forEach(el=>io.observe(el));
+}
+
+// ── FORM SUBMIT ──
+$('form-contacto').addEventListener('submit',function(e){
+  const btn=this.querySelector('[type=submit]');
+  btn.textContent='Enviando...'; btn.disabled=true;
+  setTimeout(()=>{btn.textContent='Enviar solicitud';btn.disabled=false;},4000);
+});
+</script>
+</body>
+</html>

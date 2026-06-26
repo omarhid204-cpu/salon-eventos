@@ -1,0 +1,465 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: es
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "contenido"
+    label: "Contenido del sitio"
+    files:
+      - name: "principal"
+        label: "Todo el contenido"
+        file: "content.json"
+        format: json
+        fields:
+
+          # ─────────────────────────────────────────
+          # SEO
+          # ─────────────────────────────────────────
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Título de la página", name: "title", widget: "string" }
+              - { label: "Meta descripción", name: "meta_description", widget: "text" }
+              - { label: "Keywords (separadas por coma)", name: "keywords", widget: "string" }
+              - { label: "OG Title (redes sociales)", name: "og_title", widget: "string" }
+              - { label: "OG Description", name: "og_description", widget: "text" }
+              - { label: "OG Image (imagen para redes)", name: "og_image", widget: "image", required: false }
+              - { label: "Favicon", name: "favicon", widget: "image", required: false }
+
+          # ─────────────────────────────────────────
+          # NEGOCIO
+          # ─────────────────────────────────────────
+          - label: "Datos del Negocio"
+            name: "negocio"
+            widget: "object"
+            fields:
+              - { label: "Nombre del negocio", name: "nombre", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - { label: "Descripción breve", name: "descripcion", widget: "text" }
+              - { label: "Dirección completa", name: "direccion", widget: "string" }
+              - label: "Teléfonos"
+                name: "telefonos"
+                widget: "list"
+                field: { label: "Teléfono", name: "telefono", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "WhatsApp (con código de país, sin +)", name: "whatsapp", widget: "string", hint: "Ejemplo: 5215552770000" }
+              - { label: "Ciudad", name: "ciudad", widget: "string" }
+              - label: "Coordenadas"
+                name: "coordenadas"
+                widget: "object"
+                fields:
+                  - { label: "Latitud", name: "lat", widget: "number", value_type: "float" }
+                  - { label: "Longitud", name: "lng", widget: "number", value_type: "float" }
+              - { label: "URL de Google Maps Embed", name: "mapa_embed_url", widget: "string", hint: "Pega aquí la URL completa del iframe de Google Maps" }
+              - label: "Redes Sociales"
+                name: "redes_sociales"
+                widget: "list"
+                fields:
+                  - { label: "Red social", name: "red", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Ícono (emoji o letra)", name: "icono", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # HERO
+          # ─────────────────────────────────────────
+          - label: "Hero / Portada"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta superior", name: "label", widget: "string" }
+              - { label: "Título principal", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Imágenes del carrusel"
+                name: "imagenes"
+                widget: "list"
+                fields:
+                  - { label: "Imagen", name: "url", widget: "image" }
+                  - { label: "Texto alternativo", name: "alt", widget: "string" }
+              - label: "Botones"
+                name: "botones"
+                widget: "list"
+                fields:
+                  - { label: "Texto del botón", name: "texto", widget: "string" }
+                  - label: "Tipo"
+                    name: "tipo"
+                    widget: "select"
+                    options: ["whatsapp", "enlace"]
+                  - { label: "Mensaje WhatsApp (si es WhatsApp)", name: "mensaje", widget: "string", required: false }
+                  - { label: "Enlace (si es enlace)", name: "enlace", widget: "string", required: false }
+                  - label: "Estilo"
+                    name: "estilo"
+                    widget: "select"
+                    options: ["primary", "outline", "verde", "wa"]
+
+          # ─────────────────────────────────────────
+          # VIDEO
+          # ─────────────────────────────────────────
+          - label: "Video Destacado"
+            name: "video"
+            widget: "object"
+            fields:
+              - { label: "Mostrar sección de video", name: "activo", widget: "boolean", default: true }
+              - { label: "Etiqueta", name: "label", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "URL del video (YouTube, Vimeo o MP4)", name: "url", widget: "string", required: false, hint: "Pega la URL completa de YouTube o Vimeo" }
+
+          # ─────────────────────────────────────────
+          # PROMOCIONES
+          # ─────────────────────────────────────────
+          - label: "Promociones"
+            name: "promociones"
+            widget: "list"
+            fields:
+              - { label: "Activa", name: "activo", widget: "boolean", default: true }
+              - { label: "Título de la promoción", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - { label: "Fecha/Vigencia", name: "fecha", widget: "string", required: false }
+              - { label: "Texto del botón", name: "boton_texto", widget: "string", required: false }
+              - label: "Tipo de botón"
+                name: "boton_tipo"
+                widget: "select"
+                options: ["whatsapp", "enlace"]
+                required: false
+              - { label: "Mensaje WhatsApp", name: "boton_mensaje", widget: "string", required: false }
+              - { label: "Enlace del botón", name: "boton_enlace", widget: "string", required: false }
+
+          # ─────────────────────────────────────────
+          # TIPOS DE EVENTO
+          # ─────────────────────────────────────────
+          - label: "Tipos de Evento"
+            name: "tipos_evento"
+            widget: "object"
+            fields:
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Tipos de evento"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "nombre", widget: "string" }
+                  - { label: "Ícono (emoji)", name: "icono", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # VENTAJAS
+          # ─────────────────────────────────────────
+          - label: "Ventajas / Por qué elegirnos"
+            name: "ventajas"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Ventajas"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Ícono (emoji)", name: "icono", widget: "string" }
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descripción", name: "descripcion", widget: "text" }
+
+          # ─────────────────────────────────────────
+          # CTA PRINCIPAL
+          # ─────────────────────────────────────────
+          - label: "CTA Principal (sección oscura)"
+            name: "cta_principal"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta", name: "label", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - label: "Botones"
+                name: "botones"
+                widget: "list"
+                fields:
+                  - { label: "Texto", name: "texto", widget: "string" }
+                  - label: "Tipo"
+                    name: "tipo"
+                    widget: "select"
+                    options: ["whatsapp", "enlace"]
+                  - { label: "Mensaje WhatsApp", name: "mensaje", widget: "string", required: false }
+                  - { label: "Enlace", name: "enlace", widget: "string", required: false }
+                  - label: "Estilo"
+                    name: "estilo"
+                    widget: "select"
+                    options: ["primary", "outline", "verde", "wa"]
+
+          # ─────────────────────────────────────────
+          # NOSOTROS
+          # ─────────────────────────────────────────
+          - label: "Nosotros"
+            name: "nosotros"
+            widget: "object"
+            fields:
+              - { label: "Imagen hero", name: "hero_imagen", widget: "image", required: false }
+              - { label: "Título del hero", name: "hero_titulo", widget: "string" }
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Texto principal", name: "texto", widget: "text" }
+              - { label: "Historia", name: "historia", widget: "text" }
+              - { label: "Misión", name: "mision", widget: "text" }
+              - { label: "Visión", name: "vision", widget: "text" }
+              - label: "Valores"
+                name: "valores"
+                widget: "list"
+                fields:
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "URL Video (opcional)", name: "video_url", widget: "string", required: false }
+
+          # ─────────────────────────────────────────
+          # SALONES
+          # ─────────────────────────────────────────
+          - label: "Salones y Jardines"
+            name: "salones"
+            widget: "list"
+            fields:
+              - { label: "Activo", name: "activo", widget: "boolean", default: true }
+              - { label: "Nombre del salón", name: "nombre", widget: "string" }
+              - { label: "Slug (sin espacios, sin acentos, con guiones)", name: "slug", widget: "string", hint: "Ejemplo: gran-salon-foresta" }
+              - { label: "Imagen principal", name: "imagen", widget: "image", required: false }
+              - label: "Galería de imágenes"
+                name: "galeria"
+                widget: "list"
+                field: { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Video (YouTube, Vimeo o MP4)", name: "video", widget: "string", required: false }
+              - { label: "Descripción corta", name: "descripcion_corta", widget: "text" }
+              - { label: "Descripción larga", name: "descripcion_larga", widget: "text" }
+              - { label: "Capacidad mínima (personas)", name: "capacidad_min", widget: "number" }
+              - { label: "Capacidad máxima (personas)", name: "capacidad_max", widget: "number" }
+              - label: "Tipo de espacio"
+                name: "tipo"
+                widget: "select"
+                options: ["Salón", "Jardín", "Terraza", "Roof Garden", "Restaurante"]
+              - label: "Características"
+                name: "caracteristicas"
+                widget: "list"
+                field: { label: "Característica", name: "item", widget: "string" }
+              - { label: "PDF descargable", name: "pdf", widget: "file", required: false }
+              - { label: "Mensaje de WhatsApp", name: "whatsapp_mensaje", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # EMPRESAS
+          # ─────────────────────────────────────────
+          - label: "Empresas / Corporativos"
+            name: "empresas"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - label: "Tipos de evento corporativo"
+                name: "tipos_evento"
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "nombre", widget: "string" }
+                  - { label: "Ícono (emoji)", name: "icono", widget: "string" }
+              - { label: "Mensaje de WhatsApp", name: "whatsapp_mensaje", widget: "string" }
+              - { label: "Texto del botón WhatsApp", name: "whatsapp_boton", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # SERVICIOS
+          # ─────────────────────────────────────────
+          - label: "Servicios"
+            name: "servicios"
+            widget: "list"
+            fields:
+              - { label: "Activo", name: "activo", widget: "boolean", default: true }
+              - { label: "Nombre del servicio", name: "nombre", widget: "string" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options: ["Gastronomía", "Bebidas", "Producción", "Gastronomía Especial", "Entretenimiento", "Otros"]
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - label: "Galería"
+                name: "galeria"
+                widget: "list"
+                field: { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Video (URL)", name: "video", widget: "string", required: false }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - label: "Beneficios"
+                name: "beneficios"
+                widget: "list"
+                field: { label: "Beneficio", name: "item", widget: "string" }
+              - { label: "Texto del botón", name: "boton_texto", widget: "string", required: false }
+              - label: "Tipo de botón"
+                name: "boton_tipo"
+                widget: "select"
+                options: ["whatsapp", "enlace"]
+                required: false
+              - { label: "Mensaje WhatsApp", name: "boton_mensaje", widget: "string", required: false }
+              - { label: "Enlace del botón", name: "boton_enlace", widget: "string", required: false }
+              - { label: "PDF", name: "pdf", widget: "file", required: false }
+
+          # ─────────────────────────────────────────
+          # MENÚS
+          # ─────────────────────────────────────────
+          - label: "Menús Gastronómicos"
+            name: "menus"
+            widget: "object"
+            fields:
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Menús"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Activo", name: "activo", widget: "boolean", default: true }
+                  - { label: "Nombre del menú", name: "nombre", widget: "string" }
+                  - label: "Categoría"
+                    name: "categoria"
+                    widget: "select"
+                    options: ["3 tiempos", "4 tiempos", "gourmet", "platinum", "brunch", "infantil", "corporativo"]
+                  - { label: "Imagen", name: "imagen", widget: "image", required: false }
+                  - { label: "Descripción", name: "descripcion", widget: "text" }
+                  - { label: "Precio por persona (MXN, opcional)", name: "precio", widget: "string", required: false }
+                  - { label: "PDF del menú", name: "pdf", widget: "file", required: false }
+                  - label: "Tiempos del menú"
+                    name: "tiempos"
+                    widget: "list"
+                    fields:
+                      - { label: "Nombre del tiempo (Entrada, Sopa, Plato fuerte...)", name: "nombre", widget: "string" }
+                      - label: "Platillos"
+                        name: "platillos"
+                        widget: "list"
+                        field: { label: "Platillo", name: "platillo", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # BEBIDAS
+          # ─────────────────────────────────────────
+          - label: "Carta de Bebidas"
+            name: "bebidas"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Categorías de bebidas"
+                name: "categorias"
+                widget: "list"
+                fields:
+                  - { label: "Nombre de la categoría", name: "categoria", widget: "string" }
+                  - label: "Bebidas"
+                    name: "bebidas"
+                    widget: "list"
+                    fields:
+                      - { label: "Nombre de la bebida", name: "nombre", widget: "string" }
+                      - { label: "Presentación / ml", name: "presentacion", widget: "string", required: false }
+                      - { label: "Nota descriptiva", name: "nota", widget: "string", required: false }
+                      - { label: "Imagen (opcional)", name: "imagen", widget: "image", required: false }
+
+          # ─────────────────────────────────────────
+          # RESTAURANTE
+          # ─────────────────────────────────────────
+          - label: "Restaurante"
+            name: "restaurante"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Imagen Hero", name: "imagen_hero", widget: "image", required: false }
+              - label: "Galería"
+                name: "galeria"
+                widget: "list"
+                field: { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Mensaje de WhatsApp (reserva)", name: "whatsapp_mensaje", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # EQUIPO
+          # ─────────────────────────────────────────
+          - label: "Equipo / Rostros"
+            name: "equipo"
+            widget: "object"
+            fields:
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Personas del equipo"
+                name: "personas"
+                widget: "list"
+                fields:
+                  - { label: "Activo", name: "activo", widget: "boolean", default: true }
+                  - { label: "Nombre completo", name: "nombre", widget: "string" }
+                  - { label: "Puesto / Cargo", name: "puesto", widget: "string" }
+                  - { label: "Foto", name: "foto", widget: "image", required: false }
+                  - { label: "Descripción breve", name: "descripcion", widget: "text" }
+                  - { label: "Frase destacada", name: "frase", widget: "string", required: false }
+                  - label: "Redes sociales"
+                    name: "redes"
+                    widget: "list"
+                    fields:
+                      - { label: "Red", name: "red", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+                      - { label: "Ícono (emoji o texto)", name: "icono", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # GALERÍA
+          # ─────────────────────────────────────────
+          - label: "Galería"
+            name: "galeria"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Elementos de la galería"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Activo", name: "activo", widget: "boolean", default: true }
+                  - label: "Tipo"
+                    name: "tipo"
+                    widget: "select"
+                    options: ["imagen", "video"]
+                    default: "imagen"
+                  - { label: "Archivo (imagen)", name: "archivo", widget: "image", required: false }
+                  - { label: "URL (video de YouTube/Vimeo)", name: "url", widget: "string", required: false }
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descripción", name: "descripcion", widget: "string", required: false }
+                  - label: "Categoría"
+                    name: "categoria"
+                    widget: "select"
+                    options: ["Bodas", "XV años", "Graduaciones", "Corporativos", "Jardines", "Salones", "Montajes", "Decoración", "Platillos", "Videos"]
+
+          # ─────────────────────────────────────────
+          # CONTACTO
+          # ─────────────────────────────────────────
+          - label: "Contacto"
+            name: "contacto"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - label: "Tipos de evento (para el formulario)"
+                name: "tipos_evento"
+                widget: "list"
+                field: { label: "Tipo de evento", name: "tipo", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # WHATSAPP FLOTANTE
+          # ─────────────────────────────────────────
+          - label: "Botón WhatsApp Flotante"
+            name: "whatsapp_flotante"
+            widget: "object"
+            fields:
+              - { label: "Activar botón flotante", name: "activo", widget: "boolean", default: true }
+              - { label: "Número de WhatsApp (sin +)", name: "telefono", widget: "string" }
+              - { label: "Mensaje predeterminado", name: "mensaje", widget: "string" }
+
+          # ─────────────────────────────────────────
+          # FOOTER
+          # ─────────────────────────────────────────
+          - label: "Footer / Pie de página"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Texto 'Sobre nosotros'", name: "sobre", widget: "text" }
+              - label: "Links de servicios en footer"
+                name: "servicios_links"
+                widget: "list"
+                field: { label: "Servicio", name: "servicio", widget: "string" }
+              - { label: "Texto de copyright", name: "copyright", widget: "string" }
+              - { label: "Texto de política de privacidad", name: "privacidad_texto", widget: "string" }
+              - { label: "URL de política de privacidad", name: "privacidad_url", widget: "string" }
+              - { label: "Créditos del sitio (opcional)", name: "creditos", widget: "string", required: false }

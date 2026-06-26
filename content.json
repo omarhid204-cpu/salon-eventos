@@ -1,0 +1,538 @@
+{
+  "seo": {
+    "title": "Grupo Foresta – Salón de Eventos, Banquetes y Jardines en CDMX",
+    "meta_description": "Grupo Foresta: salón de eventos premium en Chapultepec, Ciudad de México. Bodas, XV años, corporativos, banquetes y jardines. ¡Cotiza hoy!",
+    "keywords": "salón de eventos CDMX, banquetes Ciudad de México, jardín de eventos Chapultepec, salón de bodas CDMX, eventos corporativos Ciudad de México, Grupo Foresta",
+    "og_title": "Grupo Foresta – Salón de Eventos Premium en CDMX",
+    "og_description": "Tu evento soñado en Chapultepec. Salones, jardines, gastronomía de lujo y servicio impecable.",
+    "og_image": "/images/og-default.jpg",
+    "favicon": "/images/favicon.ico"
+  },
+
+  "negocio": {
+    "nombre": "Grupo Foresta",
+    "logo": "",
+    "descripcion": "Más de 30 años creando eventos memorables en el corazón de Chapultepec, Ciudad de México.",
+    "direccion": "José María Velasco 800, Bosque de Chapultepec III Secc, Miguel Hidalgo, 11950 Ciudad de México, CDMX",
+    "telefonos": ["+52 55 5277-0000", "+52 55 5277-0001"],
+    "email": "eventos@grupoforesta.mx",
+    "whatsapp": "5215552770000",
+    "ciudad": "Ciudad de México",
+    "coordenadas": {
+      "lat": 19.3966279,
+      "lng": -99.2232032
+    },
+    "mapa_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.0!2d-99.2224762!3d19.3964339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDIzJzQ3LjEiTiA5OcKwMTMnMjAuNiJX!5e0!3m2!1ses!2smx!4v1700000000000",
+    "redes_sociales": [
+      { "red": "Facebook", "url": "https://facebook.com/grupoforesta", "icono": "f" },
+      { "red": "Instagram", "url": "https://instagram.com/grupoforesta", "icono": "📷" },
+      { "red": "YouTube", "url": "https://youtube.com/@grupoforesta", "icono": "▶" },
+      { "red": "TikTok", "url": "https://tiktok.com/@grupoforesta", "icono": "♪" }
+    ]
+  },
+
+  "hero": {
+    "label": "Salón de Eventos Premium · Chapultepec CDMX",
+    "titulo": "Momentos que se convierten en recuerdos eternos",
+    "subtitulo": "Salones, jardines y gastronomía de lujo para el evento más importante de tu vida",
+    "imagenes": [
+      { "url": "", "alt": "Salón principal Grupo Foresta" },
+      { "url": "", "alt": "Jardín de eventos" },
+      { "url": "", "alt": "Montaje de boda" }
+    ],
+    "botones": [
+      { "texto": "💬 Cotizar por WhatsApp", "tipo": "whatsapp", "mensaje": "Hola, quiero cotizar un evento en Grupo Foresta", "estilo": "wa" },
+      { "texto": "Ver Salones", "tipo": "enlace", "enlace": "#salones", "estilo": "outline" },
+      { "texto": "Ver Menús", "tipo": "enlace", "enlace": "#menus", "estilo": "outline" }
+    ]
+  },
+
+  "video": {
+    "activo": true,
+    "label": "Conócenos",
+    "titulo": "Descubre la magia de Grupo Foresta",
+    "subtitulo": "Un recorrido por nuestros espacios, gastronomía y momentos únicos",
+    "url": ""
+  },
+
+  "promociones": [
+    {
+      "activo": true,
+      "titulo": "Boda de Ensueño 2025",
+      "descripcion": "Reserva tu boda antes del 31 de diciembre y recibe 10% de descuento en el paquete completo. Incluye decoración, banquete y DJ.",
+      "imagen": "",
+      "fecha": "Válida hasta 31 Dic 2025",
+      "boton_texto": "Cotizar ahora",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero información sobre la promoción de Boda de Ensueño 2025"
+    },
+    {
+      "activo": true,
+      "titulo": "Paquete XV Años Platinum",
+      "descripcion": "Todo incluido para la fiesta de quinceañera más elegante. Salón, decoración floral, menú de 4 tiempos y barra de bebidas.",
+      "imagen": "",
+      "fecha": "Temporada 2025-2026",
+      "boton_texto": "Ver detalles",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero información sobre el paquete XV Años Platinum"
+    },
+    {
+      "activo": true,
+      "titulo": "Evento Corporativo Express",
+      "descripcion": "Conferencias, cenas de gala y reuniones ejecutivas. Tecnología incluida, catering premium y coordinación total.",
+      "imagen": "",
+      "fecha": "Disponible todo el año",
+      "boton_texto": "Solicitar cotización",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero cotizar un evento corporativo en Grupo Foresta"
+    }
+  ],
+
+  "tipos_evento": {
+    "titulo": "Eventos para cada momento especial",
+    "subtitulo": "Desde íntimas reuniones hasta grandes celebraciones, tenemos el espacio perfecto para ti.",
+    "items": [
+      { "nombre": "Bodas", "icono": "💍" },
+      { "nombre": "XV Años", "icono": "👸" },
+      { "nombre": "Graduaciones", "icono": "🎓" },
+      { "nombre": "Corporativos", "icono": "🏢" },
+      { "nombre": "Bautizos", "icono": "🕊️" },
+      { "nombre": "Cumpleaños", "icono": "🎂" },
+      { "nombre": "Baby Shower", "icono": "🍼" },
+      { "nombre": "Aniversarios", "icono": "🥂" }
+    ]
+  },
+
+  "ventajas": {
+    "titulo": "¿Por qué elegir Grupo Foresta?",
+    "subtitulo": "Más de tres décadas perfeccionando cada detalle para que tu evento sea perfecto.",
+    "items": [
+      { "icono": "🏆", "titulo": "30+ años de experiencia", "descripcion": "Décadas creando momentos memorables y perfeccionando cada detalle de tus eventos especiales." },
+      { "icono": "📍", "titulo": "Ubicación privilegiada", "descripcion": "En el corazón del Bosque de Chapultepec, con acceso desde todas las zonas de la Ciudad de México." },
+      { "icono": "🍽️", "titulo": "Gastronomía de lujo", "descripcion": "Chef ejecutivo y equipo culinario de alto nivel con menús personalizados para cada evento." },
+      { "icono": "🎭", "titulo": "Event Planners dedicados", "descripcion": "Un coordinador exclusivo para tu evento que te acompaña desde la planeación hasta el último baile." },
+      { "icono": "🏛️", "titulo": "Múltiples espacios", "descripcion": "Salones, jardines, terrazas y roof gardens para eventos de 50 hasta 1,500 invitados." },
+      { "icono": "✨", "titulo": "Producción integral", "descripcion": "Decoración, iluminación, sonido, video, DJ y entretenimiento bajo un mismo techo." }
+    ]
+  },
+
+  "cta_principal": {
+    "label": "Agenda tu evento",
+    "titulo": "¿Listo para crear algo memorable?",
+    "texto": "Contáctanos hoy y recibe una cotización personalizada sin costo. Nuestros event planners están listos para hacer realidad tu visión.",
+    "botones": [
+      { "texto": "💬 Cotizar por WhatsApp", "tipo": "whatsapp", "mensaje": "Hola, quiero cotizar un evento en Grupo Foresta", "estilo": "primary" },
+      { "texto": "Ver nuestros espacios", "tipo": "enlace", "enlace": "#salones", "estilo": "outline" }
+    ]
+  },
+
+  "nosotros": {
+    "hero_imagen": "",
+    "hero_titulo": "Nuestra Historia",
+    "titulo": "Tradición y elegancia desde 1993",
+    "texto": "Grupo Foresta nació con una visión clara: crear el escenario perfecto para los momentos más importantes de la vida. Ubicados en el privilegiado Bosque de Chapultepec, hemos tenido el honor de ser parte de miles de bodas, quinceañeras, graduaciones y eventos corporativos que se han convertido en recuerdos imborrables.",
+    "historia": "Fundados en 1993 por la familia Foresta, comenzamos con un solo salón y la convicción de que cada evento merecía ser tratado con la máxima dedicación. Con el paso de los años, expandimos nuestras instalaciones, incorporamos los mejores chefs de la ciudad y construimos un equipo de coordinadores apasionados por su trabajo. Hoy, somos el referente de elegancia y calidad en eventos de la Ciudad de México.",
+    "mision": "Crear experiencias únicas e irrepetibles que superen las expectativas de nuestros clientes, combinando espacios excepcionales con gastronomía de lujo y servicio impecable.",
+    "vision": "Ser el salón de eventos más reconocido de la Ciudad de México por nuestra calidad, innovación y la felicidad de cada uno de nuestros clientes.",
+    "valores": [
+      { "titulo": "Excelencia", "descripcion": "Cada detalle importa. Buscamos la perfección en todo lo que hacemos." },
+      { "titulo": "Compromiso", "descripcion": "Tu evento es nuestra prioridad desde el primer contacto hasta el final." },
+      { "titulo": "Creatividad", "descripcion": "Cada evento es único. Adaptamos nuestra propuesta a tu personalidad y gustos." },
+      { "titulo": "Calidez", "descripcion": "Tratamos a cada cliente como si fuera de la familia Foresta." }
+    ],
+    "video_url": ""
+  },
+
+  "salones": [
+    {
+      "activo": true,
+      "nombre": "Gran Salón Foresta",
+      "slug": "gran-salon-foresta",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion_corta": "Nuestro salón principal, ideal para grandes celebraciones y eventos de gala.",
+      "descripcion_larga": "El Gran Salón Foresta es el espacio más emblemático de nuestra casa. Con una capacidad para hasta 1,000 invitados, cuenta con techos de doble altura, iluminación personalizable, pista de baile de mármol y acceso a jardines privados. Su diseño clásico con toques contemporáneos crea el ambiente perfecto para bodas, graduaciones y eventos de gala. Equipado con sistema de audio de última generación, proyección HD y climatización total.",
+      "capacidad_min": 200,
+      "capacidad_max": 1000,
+      "tipo": "Salón",
+      "caracteristicas": ["Pista de baile", "Jardín privado", "Baños de lujo", "Estacionamiento", "Cocina profesional", "Escenario", "Iluminación LED", "Sonido profesional", "Clima controlado", "Acceso discapacitados"],
+      "pdf": "",
+      "whatsapp_mensaje": "Hola, quiero cotizar el Gran Salón Foresta para mi evento"
+    },
+    {
+      "activo": true,
+      "nombre": "Jardín Chapultepec",
+      "slug": "jardin-chapultepec",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion_corta": "Un jardín mágico rodeado de árboles centenarios para bodas y eventos al aire libre.",
+      "descripcion_larga": "El Jardín Chapultepec es un oasis de tranquilidad en el corazón de la ciudad. Rodeado de árboles frondosos del Bosque de Chapultepec, ofrece un escenario natural incomparable para bodas civiles, ceremonias religiosas al aire libre y fiestas de jardín. Cuenta con iluminación ambiental, calefacción de terraza, carpa opcional y capacidad para hasta 500 invitados sentados. La combinación perfecta de naturaleza y elegancia.",
+      "capacidad_min": 100,
+      "capacidad_max": 500,
+      "tipo": "Jardín",
+      "caracteristicas": ["Jardín natural", "Iluminación ambiental", "Carpa opcional", "Calefacción exterior", "Baños de lujo", "Estacionamiento", "Acceso discapacitados"],
+      "pdf": "",
+      "whatsapp_mensaje": "Hola, quiero cotizar el Jardín Chapultepec para mi evento"
+    },
+    {
+      "activo": true,
+      "nombre": "Salón Esmeralda",
+      "slug": "salon-esmeralda",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion_corta": "Elegante salón de tamaño mediano, perfecto para XV años, bodas íntimas y eventos privados.",
+      "descripcion_larga": "El Salón Esmeralda combina elegancia clásica con comodidad moderna. Con capacidad para 150 a 400 invitados, es el espacio ideal para XV años, bodas íntimas, cenas de gala y eventos corporativos de nivel ejecutivo. Cuenta con decoración renovada, sistema de audio e iluminación de última generación, foyer de bienvenida y terraza privada.",
+      "capacidad_min": 150,
+      "capacidad_max": 400,
+      "tipo": "Salón",
+      "caracteristicas": ["Pista de baile", "Terraza privada", "Foyer", "Baños de lujo", "Sonido profesional", "Iluminación LED", "Estacionamiento"],
+      "pdf": "",
+      "whatsapp_mensaje": "Hola, quiero cotizar el Salón Esmeralda para mi evento"
+    },
+    {
+      "activo": true,
+      "nombre": "Terraza Sky Foresta",
+      "slug": "terraza-sky-foresta",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion_corta": "Terraza elevada con vista panorámica para eventos exclusivos y coctelería de lujo.",
+      "descripcion_larga": "La Terraza Sky Foresta ofrece vistas panorámicas únicas del Bosque de Chapultepec y la Ciudad de México. Ideal para cocteles de boda, recepciones empresariales y fiestas privadas exclusivas. Con una capacidad para 50 a 150 personas, este espacio boutique combina sofisticación y naturaleza en una experiencia sin igual.",
+      "capacidad_min": 50,
+      "capacidad_max": 150,
+      "tipo": "Terraza",
+      "caracteristicas": ["Vista panorámica", "Bar integrado", "Iluminación ambiental", "Música ambiente", "Capacidad reducida"],
+      "pdf": "",
+      "whatsapp_mensaje": "Hola, quiero cotizar la Terraza Sky Foresta para mi evento"
+    }
+  ],
+
+  "empresas": {
+    "titulo": "Soluciones integrales para tu empresa",
+    "texto": "En Grupo Foresta entendemos que los eventos corporativos son una extensión de la imagen de tu empresa. Por eso ofrecemos espacios de primer nivel, tecnología de punta, gastronomía ejecutiva y coordinación total para que tu evento sea impecable y refleje la excelencia de tu marca.",
+    "tipos_evento": [
+      { "nombre": "Conferencias", "icono": "🎤" },
+      { "nombre": "Cenas de Gala", "icono": "🥂" },
+      { "nombre": "Capacitaciones", "icono": "📚" },
+      { "nombre": "Lanzamientos", "icono": "🚀" },
+      { "nombre": "Reuniones Ejecutivas", "icono": "💼" },
+      { "nombre": "Exposiciones", "icono": "🎨" }
+    ],
+    "whatsapp_mensaje": "Hola, quiero cotizar un evento corporativo en Grupo Foresta",
+    "whatsapp_boton": "💬 Cotizar evento corporativo"
+  },
+
+  "servicios": [
+    {
+      "activo": true,
+      "nombre": "Banquetes",
+      "categoria": "Gastronomía",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Servicio completo de banquetes con menús personalizados, chef ejecutivo y personal especializado para tu evento.",
+      "beneficios": ["Chef ejecutivo certificado", "Menús personalizados", "Personal uniformado", "Servicio en mesa"],
+      "boton_texto": "Cotizar banquete",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero cotizar el servicio de banquetes en Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    },
+    {
+      "activo": true,
+      "nombre": "Catering",
+      "categoria": "Gastronomía",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Llevamos nuestra gastronomía de lujo a cualquier lugar de la Ciudad de México. Catering para eventos de todos los tamaños.",
+      "beneficios": ["Traslado incluido", "Equipo completo", "Montaje y desmontaje", "Chef en sitio"],
+      "boton_texto": "Cotizar catering",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero cotizar el servicio de catering de Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    },
+    {
+      "activo": true,
+      "nombre": "Diseño de Ambiente",
+      "categoria": "Producción",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Transformamos cada espacio con decoración floral, iluminación escénica y ambientación personalizada que refleja tu estilo.",
+      "beneficios": ["Decoración floral", "Iluminación LED", "Centros de mesa", "Arreglos personalizados"],
+      "boton_texto": "Ver opciones",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero información sobre el servicio de diseño de ambiente de Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    },
+    {
+      "activo": true,
+      "nombre": "Mesas de Dulces",
+      "categoria": "Gastronomía",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Mesas de dulces y postres personalizadas con temática de tu evento. Candy bar, cup cakes, macarons y más.",
+      "beneficios": ["Diseño personalizado", "Temática a elegir", "Variedad de dulces", "Montaje incluido"],
+      "boton_texto": "Cotizar mesa de dulces",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero cotizar una mesa de dulces en Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    },
+    {
+      "activo": true,
+      "nombre": "Barras de Bebidas",
+      "categoria": "Bebidas",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Barras abiertas, barras temáticas, barra de vinos y espumosos. Mixólogos certificados para cocteles de autor.",
+      "beneficios": ["Barra abierta disponible", "Mixólogos certificados", "Cocteles de autor", "Carta de vinos"],
+      "boton_texto": "Ver opciones de barra",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero información sobre las barras de bebidas de Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    },
+    {
+      "activo": true,
+      "nombre": "Paella Gigante",
+      "categoria": "Gastronomía Especial",
+      "imagen": "",
+      "galeria": [],
+      "video": "",
+      "descripcion": "Espectáculo culinario en vivo: paella valenciana preparada al momento para todos tus invitados. Una experiencia única.",
+      "beneficios": ["Show en vivo", "Paellero certificado", "Hasta 500 porciones", "Mariscos frescos"],
+      "boton_texto": "Cotizar paella",
+      "boton_tipo": "whatsapp",
+      "boton_mensaje": "Hola, quiero cotizar el servicio de paella gigante en Grupo Foresta",
+      "pdf": "",
+      "activo": true
+    }
+  ],
+
+  "menus": {
+    "titulo": "Menús Gastronómicos",
+    "subtitulo": "Nuestra propuesta culinaria fusiona lo mejor de la cocina mexicana contemporánea con técnicas internacionales.",
+    "items": [
+      {
+        "activo": true,
+        "nombre": "Menú Clásico 3 Tiempos",
+        "categoria": "3 tiempos",
+        "imagen": "",
+        "descripcion": "La experiencia gastronómica esencial de Grupo Foresta. Perfecto para eventos familiares y reuniones íntimas.",
+        "precio": "450",
+        "pdf": "",
+        "tiempos": [
+          { "nombre": "Entrada", "platillos": ["Ensalada mixta con vinagreta de frambuesa", "Crema de champiñones"] },
+          { "nombre": "Plato Fuerte", "platillos": ["Filete de res en salsa de vino tinto", "Pechuga rellena de espinacas", "Salmón a las finas hierbas"] },
+          { "nombre": "Postre", "platillos": ["Pastel de chocolate belga", "Fruta fresca con helado"] }
+        ]
+      },
+      {
+        "activo": true,
+        "nombre": "Menú Gourmet 4 Tiempos",
+        "categoria": "gourmet",
+        "imagen": "",
+        "descripcion": "Una experiencia culinaria elevada con ingredientes premium y presentación de alta cocina.",
+        "precio": "750",
+        "pdf": "",
+        "tiempos": [
+          { "nombre": "Aperitivo", "platillos": ["Canapés de salmón ahumado", "Tostadas de atún sellado con aguacate"] },
+          { "nombre": "Entrada", "platillos": ["Crema de flor de calabaza con crema de epazote", "Ensalada de betabel, queso de cabra y nuez"] },
+          { "nombre": "Plato Fuerte", "platillos": ["Lomo de res en costra de hierbas y reducción de Malbec", "Rack de cordero con puré de zanahoria", "Robalo en salsa de mariscos"] },
+          { "nombre": "Postre", "platillos": ["Fondant de chocolate negro 70% con helado de vainilla bourbon", "Cheesecake de frutos rojos"] }
+        ]
+      },
+      {
+        "activo": true,
+        "nombre": "Menú Platinum",
+        "categoria": "platinum",
+        "imagen": "",
+        "descripcion": "Nuestra propuesta más exclusiva. Ingredientes de lujo, maridaje con vinos seleccionados y servicio de mayordomo.",
+        "precio": "1200",
+        "pdf": "",
+        "tiempos": [
+          { "nombre": "Bienvenida", "platillos": ["Ostiones Rockefeller", "Vieira con espuma de azafrán", "Foie gras en brioche"] },
+          { "nombre": "Sopa", "platillos": ["Bisque de langosta con aceite de trufa"] },
+          { "nombre": "Entrada", "platillos": ["Carpaccio de wagyu con parmigiano y rúcula"] },
+          { "nombre": "Plato Fuerte", "platillos": ["Filete de res wagyu A5 con papas al gratín", "Bogavante a la parrilla con mantequilla de ajo"] },
+          { "nombre": "Postre", "platillos": ["Esfera de chocolate con centro de frambuesa y oro comestible"] }
+        ]
+      },
+      {
+        "activo": true,
+        "nombre": "Menú Brunch",
+        "categoria": "brunch",
+        "imagen": "",
+        "descripcion": "Desayuno/brunch elegante para eventos matutinos, bodas matinales y reuniones de negocios.",
+        "precio": "380",
+        "pdf": "",
+        "tiempos": [
+          { "nombre": "Estación Fría", "platillos": ["Fruta de temporada", "Yogurt con granola y miel", "Charcutería y quesos"] },
+          { "nombre": "Estación Caliente", "platillos": ["Huevos benedictinos", "Chilaquiles rojos y verdes", "French toast con maple"] },
+          { "nombre": "Bebidas", "platillos": ["Jugo de naranja natural", "Mimosas", "Café de especialidad"] }
+        ]
+      }
+    ]
+  },
+
+  "bebidas": {
+    "titulo": "Carta de Bebidas Selectas",
+    "subtitulo": "Una cuidadosa selección de vinos, espumosos, destilados y cocteles para acompañar tu celebración.",
+    "categorias": [
+      {
+        "categoria": "Vinos Blancos",
+        "bebidas": [
+          { "nombre": "Sauvignon Blanc Concha y Toro Reserva", "presentacion": "750ml", "nota": "Notas cítricas y tropicales, fresco y elegante" },
+          { "nombre": "Chardonnay Santa Rita 120", "presentacion": "750ml", "nota": "Mantequilla, vainilla y fruta blanca" },
+          { "nombre": "Pinot Grigio Santa Margherita", "presentacion": "750ml", "nota": "Italiano, ligero y refrescante" }
+        ]
+      },
+      {
+        "categoria": "Vinos Tintos",
+        "bebidas": [
+          { "nombre": "Malbec Zuccardi Valle de Uco", "presentacion": "750ml", "nota": "Ciruela, chocolate y especias. Robusto y elegante" },
+          { "nombre": "Cabernet Sauvignon Casillero del Diablo", "presentacion": "750ml", "nota": "Frutos rojos, cedro y taninos sedosos" },
+          { "nombre": "Tempranillo Protos Reserva", "presentacion": "750ml", "nota": "Español, complejo y aterciopelado" }
+        ]
+      },
+      {
+        "categoria": "Espumosos y Champagnes",
+        "bebidas": [
+          { "nombre": "Moët & Chandon Impérial Brut", "presentacion": "750ml", "nota": "El clásico francés para grandes celebraciones" },
+          { "nombre": "Freixenet Carta Nevada", "presentacion": "750ml", "nota": "Cava español, burbujas finas y refrescante" },
+          { "nombre": "Chandon Garden Spritz", "presentacion": "750ml", "nota": "Argentino, floral y afrutado" }
+        ]
+      },
+      {
+        "categoria": "Destilados Premium",
+        "bebidas": [
+          { "nombre": "Johnnie Walker Black Label", "presentacion": "750ml", "nota": "Whisky escocés suave y ahumado" },
+          { "nombre": "Don Julio Reposado", "presentacion": "750ml", "nota": "Tequila mexicano premium, agave azul" },
+          { "nombre": "Bacardí Superior", "presentacion": "750ml", "nota": "Ron blanco cubano, versátil para cocteles" },
+          { "nombre": "Hendrick's Gin", "presentacion": "750ml", "nota": "Gin escocés con pepino y pétalos de rosa" }
+        ]
+      },
+      {
+        "categoria": "Cocteles de Autor",
+        "bebidas": [
+          { "nombre": "Margarita Foresta", "presentacion": "350ml", "nota": "Tequila blanco, licor de naranja, tamarindo y chile tajín" },
+          { "nombre": "Mojito Chapultepec", "presentacion": "350ml", "nota": "Ron, menta fresca, limón, azúcar y soda" },
+          { "nombre": "Negroni de la Casa", "presentacion": "200ml", "nota": "Gin, vermut rojo, Campari y naranja" }
+        ]
+      },
+      {
+        "categoria": "Sin Alcohol",
+        "bebidas": [
+          { "nombre": "Agua Mineralizada", "presentacion": "1L" },
+          { "nombre": "Aguas Frescas de Temporada", "presentacion": "Jarra 2L", "nota": "Jamaica, horchata, tamarindo o guayaba" },
+          { "nombre": "Jugos Naturales", "presentacion": "300ml", "nota": "Naranja, zanahoria o mixto" },
+          { "nombre": "Café de Especialidad", "presentacion": "Taza", "nota": "Origen Chiapas, preparación en V60 o espresso" }
+        ]
+      }
+    ]
+  },
+
+  "restaurante": {
+    "titulo": "Restaurante Foresta",
+    "descripcion": "Más allá de los eventos, nuestro restaurante abre sus puertas para ofrecerte una experiencia gastronómica única en un ambiente de elegancia y naturaleza. Cocina mexicana contemporánea con ingredientes locales y temporalidad.",
+    "imagen_hero": "",
+    "galeria": [],
+    "whatsapp_mensaje": "Hola, quiero reservar una mesa en el Restaurante Foresta"
+  },
+
+  "equipo": {
+    "titulo": "El equipo detrás de la magia",
+    "subtitulo": "Personas apasionadas, dedicadas a hacer de tu evento algo extraordinario.",
+    "personas": [
+      {
+        "activo": true,
+        "nombre": "Carlos Mendoza",
+        "puesto": "Director General",
+        "foto": "",
+        "descripcion": "Con más de 25 años de experiencia en la industria de eventos, Carlos ha supervisado más de 5,000 celebraciones.",
+        "frase": "Cada evento es único, como las personas que lo viven.",
+        "redes": [
+          { "red": "LinkedIn", "url": "#", "icono": "in" }
+        ]
+      },
+      {
+        "activo": true,
+        "nombre": "Sofía Ramírez",
+        "puesto": "Chef Ejecutiva",
+        "foto": "",
+        "descripcion": "Graduada del Cordon Bleu, Sofía lidera nuestra propuesta culinaria fusionando técnicas internacionales con sabores mexicanos.",
+        "frase": "La comida es el idioma universal del amor.",
+        "redes": [
+          { "red": "Instagram", "url": "#", "icono": "📷" }
+        ]
+      },
+      {
+        "activo": true,
+        "nombre": "Andrea López",
+        "puesto": "Coordinadora de Eventos",
+        "foto": "",
+        "descripcion": "Especialista en bodas y eventos sociales, Andrea convierte los sueños de nuestros clientes en realidades perfectas.",
+        "frase": "Los detalles pequeños crean recuerdos grandes.",
+        "redes": []
+      },
+      {
+        "activo": true,
+        "nombre": "Miguel Torres",
+        "puesto": "Director Creativo",
+        "foto": "",
+        "descripcion": "Artista visual y diseñador de ambientes, Miguel crea espacios únicos que reflejan la personalidad de cada cliente.",
+        "frase": "El espacio habla antes que las palabras.",
+        "redes": [
+          { "red": "Instagram", "url": "#", "icono": "📷" }
+        ]
+      }
+    ]
+  },
+
+  "galeria": {
+    "titulo": "Galería de Eventos",
+    "subtitulo": "Una muestra de los momentos más especiales que hemos tenido el privilegio de acompañar.",
+    "items": [
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Boda de ensueño en Jardín Chapultepec", "descripcion": "Montaje floral en blanco y verde", "categoria": "Bodas" },
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Quinceañera rosada", "descripcion": "Decoración en rosas y dorado", "categoria": "XV años" },
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Graduación UNAM 2024", "descripcion": "Cena de gala en Gran Salón", "categoria": "Graduaciones" },
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Cena corporativa Telmex", "descripcion": "Evento ejecutivo para 300 personas", "categoria": "Corporativos" },
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Jardín en primavera", "descripcion": "Vista del Jardín Chapultepec", "categoria": "Jardines" },
+      { "activo": true, "tipo": "imagen", "archivo": "", "titulo": "Gran Salón Foresta", "descripcion": "Montaje tipo banquete para 800 personas", "categoria": "Salones" }
+    ]
+  },
+
+  "contacto": {
+    "titulo": "Contáctanos",
+    "subtitulo": "Estamos aquí para hacer realidad tu evento. Escríbenos o llámanos y te responderemos en menos de 24 horas.",
+    "tipos_evento": [
+      "Boda", "XV Años", "Graduación", "Bautizo", "Cumpleaños", "Baby Shower",
+      "Aniversario", "Evento Corporativo", "Conferencia", "Cena de Gala",
+      "Capacitación", "Lanzamiento", "Otro"
+    ]
+  },
+
+  "whatsapp_flotante": {
+    "activo": true,
+    "telefono": "5215552770000",
+    "mensaje": "Hola Grupo Foresta, me gustaría obtener información sobre sus servicios"
+  },
+
+  "footer": {
+    "sobre": "Más de 30 años creando eventos memorables en el corazón del Bosque de Chapultepec, Ciudad de México.",
+    "servicios_links": ["Banquetes", "Catering", "Diseño de Ambiente", "Barras de Bebidas", "Mesas de Dulces", "Paella Gigante"],
+    "copyright": "© 2025 Grupo Foresta. Todos los derechos reservados.",
+    "privacidad_texto": "Política de privacidad",
+    "privacidad_url": "#",
+    "creditos": "Sitio web diseñado con elegancia"
+  }
+}
